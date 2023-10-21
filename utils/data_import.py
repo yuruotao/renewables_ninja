@@ -12,6 +12,13 @@ def province_name_to_lat_lon(xlsx_path):
     
     return lat_lon_df
 
+def ninja_accounts_import(xlsx_path):
+    account_df = pd.read_excel(xlsx_path)
+    account_df = account_df.astype({'username': 'string','password': 'string','token': 'string', })
+    account_df = account_df.rename(columns = {'username': 'USERNAME','password': 'PASSWORD','token': 'TOKEN',})
+    
+    return account_df
+
 
 if __name__ == "__main__":
     province_name_to_lat_lon()
