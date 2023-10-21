@@ -354,11 +354,8 @@ def ninja_flexreq(param_table, renewable, years, tokens=[], burst_limit=6,
     
     ## Process years input 
     if isinstance(years, tuple):
-        if len(years) == 1:
-            year_seq = 
-        else:   
-            year_seq = np.arange(years[0], years[1]+1, 1).astype(str)
-            
+        year_seq = np.arange(years[0], years[1]+1, 1).astype(str)
+
         year_df = pd.DataFrame({"year": year_seq,
                                 "renew": renewable,
                                 "year_hours": 8760})

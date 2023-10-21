@@ -25,36 +25,27 @@ dataset = 'merra2'
 
 
 if __name__ == "__main__":
-
-    
-    # Import the accounts and generate clients
-    #
-    #client_list = []
-    #for client_iter in range(len(accounts_df)):
-    #    client = scraper_utils.Client.from_df(str(accounts_df["token"].iloc[client_iter]))
-    #    client_list.append(client)
-    #print(client_list)
     
     solar_df = data_import.solar_power_import(solar_path)
     solar_df['index'] = range(0, 0+len(solar_df))
     
     ### Set general parameters, fixed - These are constant in all processes
-    coord_table = solar_df["index","longitude","latitude"]
-    years = (2022)
+    print(solar_df)
+    coord_table = solar_df[["index","Longitude","Latitude"]]
+    years = "2022"
     renewable = "pv"
-    dep_capacity = solar_df["Capacity (MW)", "index"]
+    dep_capacity = solar_df[["Capacity (MW)", "index"]]
 
     ### Set variable parameters - Include whatever needs to vary over the processes
-    ##################################################################################################
-    # Tokens - 6 tokens/ accounts are needed per process for peak performance
     account_df = data_import.ninja_accounts_import(accounts_path)
-    token_list = account_df.loc[:,"token"].tolist()
-
-    #################################################################################################
+    token_list = account_df.loc[:,"TOKEN"].tolist()
     
-    ### Parallelize processes over arg_list
+    # Function parameters
+    param_list = [{"tilt": 35, "azim": 180, "capacity": 1000000},]    
+    # Bring together in list - careful with position of lists
+    arg_list = list(zip(token_list, param_list))
 
-    results = scraper_utils.ninja_parallel(coord_table=coord_table,
+    results = scraper_utils.ninja_parallel(specs=arg_list[0], coord_table=coord_table,
                             years= years, 
                             renewable= renewable, 
                             capacity_table= dep_capacity)
