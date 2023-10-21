@@ -57,13 +57,13 @@ def pv_request(coordinates, year, token= None, capacity= 1.0,
     try:
         parsed_response = json.loads(r.text)
     except json.JSONDecodeError:
-        #print("Decode error")
+        print("Decode error")
         return(pd.DataFrame(columns = ["no_response"]), dict())
 
     data = pd.read_json(json.dumps(parsed_response['data']), orient='index')
     metadata = parsed_response['metadata']
     print("Finished")
-    return(data, metadata)
+    return data, metadata
 
 def wind_request(coordinates, year, token= None, capacity= 1.0,
                  height= 100, turbine= 'Vestas V80 2000'):
@@ -632,9 +632,5 @@ def ninja_parallel(specs, coord_table, years, renewable, capacity_table,
     ninja_table = ninja_flexreq(param_table=param_table, renewable=renewable, 
                                 years=years, tokens=tokens, burst_limit=burst_limit,
                                 sustained_limit=sustained_limit)
-    
-    ## Aggregate over flexreq as usual
-    ninja_table = ninja_aggregation(ninja_table=ninja_table, renewable=renewable,
-                                    capacity_table=capacity_table, unit_divider=unit_divider,
-                                    source_type=source_type)    
+     
     return(ninja_table)

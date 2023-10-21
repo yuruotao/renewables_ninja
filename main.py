@@ -14,44 +14,48 @@ solar_path = input_data_path + "/Global-Solar-Power-Tracker.xlsx"
 accounts_path = input_data_path + "/ninja_accounts.xlsx"
 
 # Define the query parameters
-#date_from = pd.to_datetime(2022, 1, 1)
-#date_to = pd.to_datetime(2022,12,31)
-capacity = 1.0
 system_loss = 0.1
 tracking = False
 tilt = 35
 azim = 180
 dataset = 'merra2'
 
-
-if __name__ == "__main__":
-    
+def gx_solar():
     solar_df = data_import.solar_power_import(solar_path)
-    solar_df['index'] = range(0, 0+len(solar_df))
-    
-    ### Set general parameters, fixed - These are constant in all processes
-    print(solar_df)
-    coord_table = solar_df[["index","Longitude","Latitude"]]
-    years = "2022"
-    renewable = "pv"
-    dep_capacity = solar_df[["Capacity (MW)", "index"]]
+    solar_df['index'] = range(0, len(solar_df))
+    solar_df.to_excel("./results/gx_solar_index.xlsx")
 
-    ### Set variable parameters - Include whatever needs to vary over the processes
+    # Tokens
     account_df = data_import.ninja_accounts_import(accounts_path)
     token_list = account_df.loc[:,"TOKEN"].tolist()
-    
-    # Function parameters
-    param_list = [{"tilt": 35, "azim": 180, "capacity": 1000000},]    
-    # Bring together in list - careful with position of lists
-    arg_list = list(zip(token_list, param_list))
 
-    results = scraper_utils.ninja_parallel(specs=arg_list[0], coord_table=coord_table,
-                            years= years, 
-                            renewable= renewable, 
-                            capacity_table= dep_capacity)
+    # Parameters
+    year = "2022"
+
+    for i in range(202, len(solar_df)):
+        print("iteration ", i)
+        temp_df = solar_df[solar_df["index"]==i]
+        coordinate=[]
+        coordinate.append(temp_df["Latitude"])
+        coordinate.append(temp_df["Longitude"])
+        capacity=temp_df["Capacity (MW)"]
+        temp_data, temp_metadata = scraper_utils.pv_request(coordinates=coordinate,
+                                 year=year,
+                                 token=token_list[4],
+                                 capacity=capacity,
+                                 system_loss= 0.1, 
+                                 tracking= 0, 
+                                 tilt= 35, 
+                                 azim= 180)
+        print(temp_data)
+        temp_data.to_excel("./results/gx_solar/gx_"+ str(i) + ".xlsx")
+
+
+
+if __name__ == "__main__":
+    solar_df = data_import.solar_power_import(solar_path)
+    for i in range(0, len(solar_df)):
+        name = "gx_" + str(i) + ".xlsx"
+        
     
-    ### Cautionary saving of results
-    results.to_csv("./results/pv_test_south1.csv", index=False)
-    print("Finished scraping.")
-    
-    
+        

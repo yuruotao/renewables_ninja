@@ -42,8 +42,6 @@ def solar_power_import(xlsx_path):
     solar_param_df = solar_param_df[solar_param_df["State/Province"]=="Guangxi"]
 
     #solar_param_df = solar_param_df.astype({'LON': 'float','LAT': 'float', })
-
-    print(solar_param_df)
     return solar_param_df
 
 def ninja_accounts_import(xlsx_path):
