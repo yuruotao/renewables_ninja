@@ -1,5 +1,6 @@
 from pathlib import Path
 import pandas as pd
+from dateutil.relativedelta import relativedelta
 
 from utils import data_import
 from utils import scraper_utils
@@ -55,7 +56,16 @@ def gx_solar():
 if __name__ == "__main__":
     solar_df = data_import.solar_power_import(solar_path)
     for i in range(0, len(solar_df)):
-        name = "gx_" + str(i) + ".xlsx"
+        print("file " + str(i))
+        input_name = "gx_" + str(i) + ".xlsx"
+        temp_df = pd.read_excel("./results/gx_solar/gx_" + str(i) + ".xlsx")
+        temp_df.rename(columns={ temp_df.columns[0]: "time" }, inplace = True)
+        
+        temp_df["time"] = temp_df["time"].apply(lambda x:x + relativedelta(hours = 8))
+        print(temp_df)
+        
+        output_name = "gx_" + str(i) + ".csv"
+        temp_df.to_csv("./results/gx_solar_csv/" + output_name, index=False)
         
     
         
