@@ -638,4 +638,3 @@ def ninja_parallel(specs, coord_table, years, renewable, capacity_table,
                                     capacity_table=capacity_table, unit_divider=unit_divider,
                                     source_type=source_type)    
     return(ninja_table)
-###################################################################################################
