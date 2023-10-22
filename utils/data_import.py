@@ -39,7 +39,7 @@ def solar_power_import(xlsx_path):
     
     solar_param_df = solar_param_df[["Country", "State/Province", "Longitude", "Latitude", "Capacity (MW)", "Project Name"]]
     solar_param_df = solar_param_df[solar_param_df["Country"]=="China"]
-    solar_param_df = solar_param_df[solar_param_df["State/Province"]=="Guangxi"]
+    #solar_param_df = solar_param_df[solar_param_df["State/Province"]=="Guangxi"]
 
     #solar_param_df = solar_param_df.astype({'LON': 'float','LAT': 'float', })
     return solar_param_df
