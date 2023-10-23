@@ -97,8 +97,6 @@ if __name__ == "__main__":
     "Fujian"
     "Gansu"
     
-    
-    
     "Guangdong"
     
     "Guangxi"
@@ -128,6 +126,7 @@ if __name__ == "__main__":
     "Yunnan"
     "Zhejiang"
     """
+    
     '''
     for i in range(0, len(solar_df)):
         print("file " + str(i))
