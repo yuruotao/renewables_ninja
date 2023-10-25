@@ -8,32 +8,6 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 
 
-# Import the osm data of the country designated by parameter "place"
-# Save cache into the folder "cache"
-# Save the constructed model as "graph.graphml"
-def osm_data_import_os(place, network, filter, save_path, plot_state):
-    import osmnx as ox
-    from shapely.errors import GEOSException
-    # map data source http://download.geofabrik.de/asia.html
-    
-    # Construct the graphml object
-    ox.config(use_cache=True, log_console=True)
-    try:
-        G = ox.graph_from_place(place, network_type= network, custom_filter= filter, retain_all = False, simplify=True)
-    except GEOSException:
-        pass
-    
-    # save graph as graphml
-    ox.save_graphml(G, save_path + "/guangxi_graph.graphml")
-    
-    # calculate basic street network metrics and display average circuity
-    stats = ox.basic_stats(G)
-    print(stats)
-    
-    # Visualization
-    if plot_state == 1:
-        fig, ax = ox.plot_graph(G)
-    return G, stats
 
 # Convert dataframe to geodataframe
 # df is the input dataframe
@@ -200,11 +174,6 @@ def gx_grid_mapping(graph, path, plot_state):
     return graph
 
 if __name__ == "__main__":
-    
-    # Import the osm power data
-    osm_data, osm_stats = osm_data_import_os('Guangxi, China', 'all', '["power"~"line"]', "./data/intermediate", 0)
-    
-    gx_grid_mapping(graph, "./result/figure", 1)
     
 
     

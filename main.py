@@ -13,6 +13,7 @@ input_data_path = current_path + "/data/model_input"
 lat_lon_path = input_data_path + "/china_mass_center_2019.xlsx"
 solar_path = input_data_path + "/Global-Solar-Power-Tracker.xlsx"
 accounts_path = input_data_path + "/ninja_accounts.xlsx"
+wind_path = input_data_path + "/.xlsx"
 
 # Define the query parameters
 system_loss = 0.1
@@ -87,6 +88,59 @@ def provincial_solar(province):
             os.makedirs("./results/china_solar/" + province + "/")
         temp_data.to_excel("./results/china_solar/"+ province + "/" + province + "_"+ str(i) + ".xlsx")
 
+def provincial_wind(province):
+    import os
+
+    wind_df = data_import.wind_power_import(wind_path)
+    wind_df = wind_df[wind_df["State/Province"]==province]
+    wind_df['index'] = range(0, len(wind_df))
+    wind_df.to_excel("./results/" + province +"_wind_index.xlsx")
+
+    # Tokens
+    account_df = data_import.ninja_accounts_import(accounts_path)
+    token_list = account_df.loc[:,"TOKEN"].tolist()
+
+    # Parameters
+    year = "2022"
+
+    for i in range(0, len(wind_df)):
+        print("iteration ", i,"/", len(wind_df)-1)
+        temp_df = wind_df[wind_df["index"]==i]
+        coordinate=[]
+        coordinate.append(temp_df["Latitude"])
+        coordinate.append(temp_df["Longitude"])
+        capacity=temp_df["Capacity (MW)"]
+        temp_data, temp_metadata = scraper_utils.pv_request(coordinates=coordinate,
+                                 year=year,
+                                 token=token_list[4],
+                                 capacity=capacity,
+                                 system_loss= 0.1, 
+                                 tracking= 0, 
+                                 tilt= 35, 
+                                 azim= 180)
+        print(temp_data)
+        
+        if not os.path.exists("./results/china_wind/" + province + "/"):
+            os.makedirs("./results/china_wind/" + province + "/")
+        temp_data.to_excel("./results/china_wind/"+ province + "/" + province + "_"+ str(i) + ".xlsx")
+
+def time_zone_shift(df_name):
+    
+    for i in range(0, len(solar_df)):
+        print("file " + str(i))
+        input_name = "gx_" + str(i) + ".xlsx"
+        temp_df = pd.read_excel("./results/gx_solar/gx_" + str(i) + ".xlsx")
+        temp_df.rename(columns={ temp_df.columns[0]: "time" }, inplace = True)
+        
+        temp_df["time"] = temp_df["time"].apply(lambda x:x + relativedelta(hours = 8))
+        print(temp_df)
+        
+        output_name = "gx_" + str(i) + ".csv"
+        temp_df.to_csv("./results/gx_solar_csv/" + output_name, index=False)
+    
+    return
+
+
 if __name__ == "__main__":
     #solar_df = data_import.solar_power_import(solar_path)
     provincial_solar("Guizhou")
@@ -125,18 +179,6 @@ if __name__ == "__main__":
     "Zhejiang"
     """
     
-    '''
-    for i in range(0, len(solar_df)):
-        print("file " + str(i))
-        input_name = "gx_" + str(i) + ".xlsx"
-        temp_df = pd.read_excel("./results/gx_solar/gx_" + str(i) + ".xlsx")
-        temp_df.rename(columns={ temp_df.columns[0]: "time" }, inplace = True)
-        
-        temp_df["time"] = temp_df["time"].apply(lambda x:x + relativedelta(hours = 8))
-        print(temp_df)
-        
-        output_name = "gx_" + str(i) + ".csv"
-        temp_df.to_csv("./results/gx_solar_csv/" + output_name, index=False)
-    '''
+
     
         

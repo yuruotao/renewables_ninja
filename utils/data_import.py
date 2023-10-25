@@ -1,8 +1,5 @@
 import pandas as pd
 
-
-
-
 def province_name_to_lat_lon(xlsx_path):
     """Get the longitude and latitude from xlsx
 
@@ -29,7 +26,7 @@ def solar_power_import(xlsx_path):
     """_summary_
 
     Args:
-        xlsx_path (string): he xlsx file path pointing at the solar projects
+        xlsx_path (string): the xlsx file path pointing at the solar projects
 
     Returns:
         _type_: _description_
@@ -43,6 +40,25 @@ def solar_power_import(xlsx_path):
 
     #solar_param_df = solar_param_df.astype({'LON': 'float','LAT': 'float', })
     return solar_param_df
+
+def wind_power_import(xlsx_path):
+    """_summary_
+
+    Args:
+        xlsx_path (string): the xlsx file path pointing at the wind projects
+
+    Returns:
+        dataframe: _description_
+    """
+    wind_param_df = pd.read_excel(xlsx_path, sheet_name="Data")
+    #wind_param_df_1 = pd.read_excel(xlsx_path, sheet_name="Below Threashold")
+    
+    wind_param_df = wind_param_df[["Country", "State/Province", "Longitude", "Latitude", "Capacity (MW)", "Project Name"]]
+    wind_param_df = wind_param_df[wind_param_df["Country"]=="China"]
+    #wind_param_df = wind_param_df[wind_param_df["State/Province"]=="Guangxi"]
+
+    #wind_param_df = wind_param_df.astype({'LON': 'float','LAT': 'float', })
+    return wind_param_df
 
 def ninja_accounts_import(xlsx_path):
     account_df = pd.read_excel(xlsx_path)
