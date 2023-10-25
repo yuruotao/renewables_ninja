@@ -7,27 +7,6 @@ import osmnx as ox
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
-
-
-# Convert dataframe to geodataframe
-# df is the input dataframe
-# lon_name is the column name for longitude
-# lat_name is the column name for latitude
-def df_to_gdf(df, lon_name, lat_name):
-    import pandas as pd
-    import geopandas as gpd
-    from shapely.geometry import Point
-    
-    # Designate the coordinate system
-    crs = {'init':'EPSG:4326'}
-    # Construct the geometry for geodataframe
-    geometry = [Point(xy) for xy in zip(df[lon_name], df[lat_name])]
-    gdf = gpd.GeoDataFrame(df, 
-                          crs = crs, 
-                          geometry = geometry)
-    
-    return gdf
-
 # Import the infrastructure data
 def infra_data_import():
     import pandas as pd
@@ -115,9 +94,7 @@ def infra_data_import():
     return atomic, solar, thermal, wind, gas, water
 
 def gx_grid_mapping(graph, path, plot_state):
-    import osmnx as ox
     import matplotlib.pyplot as plt
-    import geopandas as gpd
     
     # Add the provincial border line
     # https://data.humdata.org/dataset/cod-ab-chn
@@ -168,7 +145,7 @@ def gx_grid_mapping(graph, path, plot_state):
         ax.set_xlim((west - margin_ew, east + margin_ew))
         
         # Save and show figure
-        plt.savefig(path + "/gx_distribution.png", dpi=900)
+        plt.savefig(path + "/_distribution.png", dpi=900)
         plt.show()
 
     return graph
