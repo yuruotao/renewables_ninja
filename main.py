@@ -66,7 +66,7 @@ def provincial_solar(province):
     # Parameters
     year = "2022"
 
-    for i in range(2, len(solar_df)):
+    for i in range(0, len(solar_df)):
         print("iteration ", i,"/", len(solar_df)-1)
         temp_df = solar_df[solar_df["index"]==i]
         coordinate=[]
@@ -75,7 +75,7 @@ def provincial_solar(province):
         capacity=temp_df["Capacity (MW)"]
         temp_data, temp_metadata = scraper_utils.pv_request(coordinates=coordinate,
                                  year=year,
-                                 token=token_list[0],
+                                 token=token_list[4],
                                  capacity=capacity,
                                  system_loss= 0.1, 
                                  tracking= 0, 
@@ -89,19 +89,17 @@ def provincial_solar(province):
 
 if __name__ == "__main__":
     #solar_df = data_import.solar_power_import(solar_path)
-    provincial_solar("Guangdong")
+    provincial_solar("Guizhou")
     """
     "Anhui"
     "Beijing"
     "Chongqing"
     "Fujian"
     "Gansu"
-    
     "Guangdong"
-    
     "Guangxi"
-    
     "Guizhou"
+    
     "Hainan"
     "Hebei"
     "Heilongjiang"
