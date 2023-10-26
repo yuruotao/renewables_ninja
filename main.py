@@ -76,7 +76,7 @@ def provincial_solar(province):
         capacity=temp_df["Capacity (MW)"]
         temp_data, temp_metadata = scraper_utils.pv_request(coordinates=coordinate,
                                  year=year,
-                                 token=token_list[4],
+                                 token=token_list[3],
                                  capacity=capacity,
                                  system_loss= 0.1, 
                                  tracking= 0, 
@@ -126,7 +126,7 @@ def provincial_wind(province):
 
 def time_zone_shift(df_name):
     
-    for i in range(0, len(solar_df)):
+    for i in range(0, len(df_name)):
         print("file " + str(i))
         input_name = "gx_" + str(i) + ".xlsx"
         temp_df = pd.read_excel("./results/gx_solar/gx_" + str(i) + ".xlsx")
@@ -143,7 +143,7 @@ def time_zone_shift(df_name):
 
 if __name__ == "__main__":
     #solar_df = data_import.solar_power_import(solar_path)
-    provincial_solar("Guizhou")
+    provincial_solar("Hainan")
     """
     "Anhui"
     "Beijing"
@@ -153,8 +153,8 @@ if __name__ == "__main__":
     "Guangdong"
     "Guangxi"
     "Guizhou"
-    
     "Hainan"
+    
     "Hebei"
     "Heilongjiang"
     "Henan"
