@@ -66,9 +66,14 @@ def provincial_solar(province):
 
     # Parameters
     year = "2022"
+    tk = 0
 
-    for i in range(0, len(solar_df)):
+    for i in range(399, len(solar_df)):
+        if tk > (len(token_list)):
+            tk = 0
+        
         print("iteration ", i,"/", len(solar_df)-1)
+        print("tk ", tk, token_list[tk])
         temp_df = solar_df[solar_df["index"]==i]
         coordinate=[]
         coordinate.append(temp_df["Latitude"])
@@ -76,13 +81,14 @@ def provincial_solar(province):
         capacity=temp_df["Capacity (MW)"]
         temp_data, temp_metadata = scraper_utils.pv_request(coordinates=coordinate,
                                  year=year,
-                                 token=token_list[3],
+                                 token=token_list[tk],
                                  capacity=capacity,
                                  system_loss= 0.1, 
                                  tracking= 0, 
                                  tilt= 35, 
                                  azim= 180)
         print(temp_data)
+        tk =tk + 1
         
         if not os.path.exists("./results/china_solar/" + province + "/"):
             os.makedirs("./results/china_solar/" + province + "/")
@@ -143,7 +149,7 @@ def time_zone_shift(df_name):
 
 if __name__ == "__main__":
     #solar_df = data_import.solar_power_import(solar_path)
-    provincial_solar("Hainan")
+    provincial_solar("Hebei")
     """
     "Anhui"
     "Beijing"
