@@ -6,6 +6,40 @@ import osmnx as ox
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
+province_name_list = [
+    "Anhui",
+    "Beijing",
+    "Chongqing",
+    "Fujian",
+    "Gansu",
+    "Guangdong",
+    "Guangxi",
+    "Guizhou",
+    "Hainan",
+    "Hebei",
+    "Heilongjiang",
+    "Henan",
+    "Hubei",
+    "Hunan",
+    "Inner Mongolia",
+    "Jiangsu",
+    "Jiangxi",
+    "Jilin",
+    "Liaoning",
+    "Ningxia",
+    "Qinghai",
+    "Shannxi",
+    "Shandong",
+    "Shanghai",
+    "Shanxi",
+    "Sichuan",
+    "Tianjin",
+    "Tibet",
+    "Xinjiang",
+    "Yunnan",
+    "Zhejiang",
+]
+
 # Import the infrastructure data
 def infra_data_import():
     import pandas as pd
@@ -159,5 +193,5 @@ def province_grid_mapping(province, graph, path, plot_state):
 
 if __name__ == "__main__":
     
-
+    
     
