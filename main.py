@@ -70,7 +70,8 @@ def provincial_solar(province):
     year = "2022"
     tk = 0
 
-    for i in range(128, len(solar_df)):
+    #128 len(solar_df)
+    for i in range(128, 135):
         if tk == (len(token_list)):
             tk = 0
         
@@ -83,7 +84,7 @@ def provincial_solar(province):
         capacity=temp_df["Capacity (MW)"]
         temp_data, temp_metadata = scraper_utils.pv_request(coordinates=coordinate,
                                  year=year,
-                                 token=token_list[tk],
+                                 token=token_list[9],
                                  capacity=capacity,
                                  system_loss= 0.1, 
                                  tracking= 0, 
@@ -182,13 +183,15 @@ def time_zone_shift_wind(df_name, province):
     return None
 
 if __name__ == "__main__":
-    province = "Guangxi"
+    province = "Hebei"
     #provincial_solar("Hubei")
-    provincial_wind(province)
-    #solar_df = data_import.solar_power_import(solar_path)
-    #solar_df_province = solar_df[solar_df["State/Province"]== province]
-    #solar_df_province['index'] = range(0, len(solar_df_province))
-    #time_zone_shift_solar(solar_df_province, province)
+    #provincial_solar(province)
+    
+    #provincial_wind(province)
+    solar_df = data_import.solar_power_import(solar_path)
+    solar_df_province = solar_df[solar_df["State/Province"]== province]
+    solar_df_province['index'] = range(0, len(solar_df_province))
+    time_zone_shift_solar(solar_df_province, province)
     
     """
     "Anhui"
