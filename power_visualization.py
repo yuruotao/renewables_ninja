@@ -2,7 +2,6 @@
 import pandas as pd
 import numpy as np
 from pathlib import Path
-import matplotlib
 import osmnx as ox
 import geopandas as gpd
 import matplotlib.pyplot as plt
@@ -93,12 +92,20 @@ def infra_data_import():
     
     return atomic, solar, thermal, wind, gas, water
 
-def gx_grid_mapping(graph, path, plot_state):
-    import matplotlib.pyplot as plt
-    
+def province_grid_mapping(province, graph, path, plot_state):
+    """
+
+    Args:
+        province (string): the province to be plotted
+        path (_type_): _description_
+        plot_state (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     # Add the provincial border line
     # https://data.humdata.org/dataset/cod-ab-chn
-    gdf_provincial = gpd.read_file("./data/shape_data/guangxi/guangxi.shp")
+    gdf_provincial = gpd.read_file("./data/shape_data/"+ province + "/" + province + ".shp")
 
     # Plot the figure
     if plot_state == 1:
@@ -145,7 +152,7 @@ def gx_grid_mapping(graph, path, plot_state):
         ax.set_xlim((west - margin_ew, east + margin_ew))
         
         # Save and show figure
-        plt.savefig(path + "/_distribution.png", dpi=900)
+        plt.savefig(path + province +"/_solar.png", dpi=900)
         plt.show()
 
     return graph

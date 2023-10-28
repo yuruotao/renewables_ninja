@@ -1,6 +1,7 @@
 from pathlib import Path
 import pandas as pd
 from dateutil.relativedelta import relativedelta
+import os
 
 from utils import data_import
 from utils import scraper_utils
@@ -130,26 +131,36 @@ def provincial_wind(province):
             os.makedirs("./results/china_wind/" + province + "/")
         temp_data.to_excel("./results/china_wind/"+ province + "/" + province + "_"+ str(i) + ".xlsx")
 
-def time_zone_shift(df_name):
+def time_zone_shift_solar(df_name, province):
+    if not os.path.exists("./results/china_solar_csv/"):
+        os.makedirs("./results/china_solar_csv/")
     
+    if not os.path.exists("./results/china_solar_csv/" + province + "/"):
+        os.makedirs("./results/china_solar_csv/" + province + "/")
+        
     for i in range(0, len(df_name)):
         print("file " + str(i))
-        input_name = "gx_" + str(i) + ".xlsx"
-        temp_df = pd.read_excel("./results/gx_solar/gx_" + str(i) + ".xlsx")
+        temp_df = pd.read_excel("./results/china_solar/" + province + "/" + province + "_" + str(i) + ".xlsx")
         temp_df.rename(columns={ temp_df.columns[0]: "time" }, inplace = True)
         
         temp_df["time"] = temp_df["time"].apply(lambda x:x + relativedelta(hours = 8))
         print(temp_df)
         
-        output_name = "gx_" + str(i) + ".csv"
-        temp_df.to_csv("./results/gx_solar_csv/" + output_name, index=False)
+        output_name =  province + "_" + str(i) + ".csv"
+        temp_df.to_csv("./results/china_solar_csv/" + province + "/" + output_name, index=False)
     
-    return
+    return None
 
 
 if __name__ == "__main__":
-    #solar_df = data_import.solar_power_import(solar_path)
-    provincial_solar("Hubei")
+    province = "Henan"
+    #provincial_solar("Hubei")
+    
+    solar_df = data_import.solar_power_import(solar_path)
+    solar_df_province = solar_df[solar_df["State/Province"]== province]
+    solar_df_province['index'] = range(0, len(solar_df_province))
+    time_zone_shift_solar(solar_df_province, province)
+    
     """
     "Anhui"
     "Beijing"
@@ -164,6 +175,7 @@ if __name__ == "__main__":
     "Heilongjiang"
     "Henan"
     "Hubei"
+    
     "Hunan"
     "Inner Mongolia"
     "Jiangsu"
