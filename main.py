@@ -14,7 +14,7 @@ input_data_path = current_path + "/data/model_input"
 lat_lon_path = input_data_path + "/china_mass_center_2019.xlsx"
 solar_path = input_data_path + "/Global-Solar-Power-Tracker.xlsx"
 accounts_path = input_data_path + "/ninja_accounts.xlsx"
-wind_path = input_data_path + "/.xlsx"
+wind_path = input_data_path + "/Global-Wind-Power-Tracker.xlsx"
 
 # Define the query parameters
 system_loss = 0.1
@@ -35,7 +35,8 @@ def gx_solar():
     # Parameters
     year = "2022"
 
-    for i in range(202, len(solar_df)):
+    for i in range(46, 47):
+        #len(solar_df)
         print("iteration ", i)
         temp_df = solar_df[solar_df["index"]==i]
         coordinate=[]
@@ -51,7 +52,7 @@ def gx_solar():
                                  tilt= 35, 
                                  azim= 180)
         print(temp_data)
-        temp_data.to_excel("./results/gx_solar/gx_"+ str(i) + ".xlsx")
+        temp_data.to_excel("./results/china_solar/gx_solar/gx_"+ str(i) + ".xlsx")
 
 def provincial_solar(province):
     import os
@@ -110,8 +111,14 @@ def provincial_wind(province):
     # Parameters
     year = "2022"
 
+    tk = 0
+    
     for i in range(0, len(wind_df)):
+        if tk == (len(token_list)):
+            tk = 0
+        
         print("iteration ", i,"/", len(wind_df)-1)
+        print("tk ", tk, token_list[tk])
         temp_df = wind_df[wind_df["index"]==i]
         coordinate=[]
         coordinate.append(temp_df["Latitude"])
@@ -119,13 +126,14 @@ def provincial_wind(province):
         capacity=temp_df["Capacity (MW)"]
         temp_data, temp_metadata = scraper_utils.pv_request(coordinates=coordinate,
                                  year=year,
-                                 token=token_list[4],
+                                 token=token_list[tk],
                                  capacity=capacity,
                                  system_loss= 0.1, 
                                  tracking= 0, 
                                  tilt= 35, 
                                  azim= 180)
         print(temp_data)
+        tk =tk + 1
         
         if not os.path.exists("./results/china_wind/" + province + "/"):
             os.makedirs("./results/china_wind/" + province + "/")
@@ -141,6 +149,7 @@ def time_zone_shift_solar(df_name, province):
     for i in range(0, len(df_name)):
         print("file " + str(i))
         temp_df = pd.read_excel("./results/china_solar/" + province + "/" + province + "_" + str(i) + ".xlsx")
+        
         temp_df.rename(columns={ temp_df.columns[0]: "time" }, inplace = True)
         
         temp_df["time"] = temp_df["time"].apply(lambda x:x + relativedelta(hours = 8))
@@ -151,15 +160,35 @@ def time_zone_shift_solar(df_name, province):
     
     return None
 
+def time_zone_shift_wind(df_name, province):
+    if not os.path.exists("./results/china_wind_csv/"):
+        os.makedirs("./results/china_wind_csv/")
+    
+    if not os.path.exists("./results/china_wind_csv/" + province + "/"):
+        os.makedirs("./results/china_wind_csv/" + province + "/")
+        
+    for i in range(0, len(df_name)):
+        print("file " + str(i))
+        temp_df = pd.read_excel("./results/china_wind/" + province + "/" + province + "_" + str(i) + ".xlsx")
+        
+        temp_df.rename(columns={ temp_df.columns[0]: "time" }, inplace = True)
+        
+        temp_df["time"] = temp_df["time"].apply(lambda x:x + relativedelta(hours = 8))
+        print(temp_df)
+        
+        output_name =  province + "_" + str(i) + ".csv"
+        temp_df.to_csv("./results/china_wind_csv/" + province + "/" + output_name, index=False)
+    
+    return None
 
 if __name__ == "__main__":
-    province = "Henan"
+    province = "Guangxi"
     #provincial_solar("Hubei")
-    
-    solar_df = data_import.solar_power_import(solar_path)
-    solar_df_province = solar_df[solar_df["State/Province"]== province]
-    solar_df_province['index'] = range(0, len(solar_df_province))
-    time_zone_shift_solar(solar_df_province, province)
+    provincial_wind(province)
+    #solar_df = data_import.solar_power_import(solar_path)
+    #solar_df_province = solar_df[solar_df["State/Province"]== province]
+    #solar_df_province['index'] = range(0, len(solar_df_province))
+    #time_zone_shift_solar(solar_df_province, province)
     
     """
     "Anhui"
