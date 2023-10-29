@@ -183,15 +183,19 @@ def time_zone_shift_wind(df_name, province):
     return None
 
 if __name__ == "__main__":
-    province = "Hebei"
+    province = "Guangxi"
     #provincial_solar("Hubei")
     #provincial_solar(province)
+    #solar_df = data_import.solar_power_import(solar_path)
+    #solar_df_province = solar_df[solar_df["State/Province"]== province]
+    #solar_df_province['index'] = range(0, len(solar_df_province))
+    #time_zone_shift_solar(solar_df_province, province)
     
     #provincial_wind(province)
-    solar_df = data_import.solar_power_import(solar_path)
-    solar_df_province = solar_df[solar_df["State/Province"]== province]
-    solar_df_province['index'] = range(0, len(solar_df_province))
-    time_zone_shift_solar(solar_df_province, province)
+    wind_df = data_import.wind_power_import(wind_path)
+    wind_df_province = wind_df[wind_df["State/Province"]== province]
+    wind_df_province['index'] = range(0, len(wind_df_province))
+    time_zone_shift_wind(wind_df_province, province)
     
     """
     "Anhui"
