@@ -70,7 +70,8 @@ def provincial_solar(province):
     year = "2022"
     tk = 0
 
-    for i in range(227, len(solar_df)):
+
+    for i in range(432, len(solar_df)):
         if tk == (len(token_list)):
             tk = 0
         
@@ -182,7 +183,7 @@ def time_zone_shift_wind(df_name, province):
     return None
 
 if __name__ == "__main__":
-    province = "Shanxi"
+    province = "Xinjiang"
     #provincial_solar("Hubei")
     provincial_solar(province)
     #solar_df = data_import.solar_power_import(solar_path)
