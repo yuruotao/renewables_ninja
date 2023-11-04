@@ -60,7 +60,7 @@ def provincial_solar(province):
     solar_df = data_import.solar_power_import(solar_path)
     solar_df = solar_df[solar_df["State/Province"]==province]
     solar_df['index'] = range(0, len(solar_df))
-    solar_df.to_excel("./results/" + province +"_solar_index.xlsx")
+    solar_df.to_excel("./results/solar_index/" + province +"_solar_index.xlsx")
 
     # Tokens
     account_df = data_import.ninja_accounts_import(accounts_path)
@@ -71,7 +71,7 @@ def provincial_solar(province):
     tk = 0
 
 
-    for i in range(432, len(solar_df)):
+    for i in range(400, len(solar_df)):
         if tk == (len(token_list)):
             tk = 0
         
@@ -103,7 +103,7 @@ def provincial_wind(province):
     wind_df = data_import.wind_power_import(wind_path)
     wind_df = wind_df[wind_df["State/Province"]==province]
     wind_df['index'] = range(0, len(wind_df))
-    wind_df.to_excel("./results/" + province +"_wind_index.xlsx")
+    wind_df.to_excel("./results/wind_index/" + province +"_wind_index.xlsx")
 
     # Tokens
     account_df = data_import.ninja_accounts_import(accounts_path)
@@ -125,14 +125,12 @@ def provincial_wind(province):
         coordinate.append(temp_df["Latitude"])
         coordinate.append(temp_df["Longitude"])
         capacity=temp_df["Capacity (MW)"]
-        temp_data, temp_metadata = scraper_utils.pv_request(coordinates=coordinate,
+        temp_data, temp_metadata = scraper_utils.wind_request(coordinates=coordinate,
                                  year=year,
                                  token=token_list[tk],
                                  capacity=capacity,
-                                 system_loss= 0.1, 
-                                 tracking= 0, 
-                                 tilt= 35, 
-                                 azim= 180)
+                                 height= 100, 
+                                 turbine= 'Vestas V80 2000')
         print(temp_data)
         tk =tk + 1
         
@@ -185,11 +183,11 @@ def time_zone_shift_wind(df_name, province):
 if __name__ == "__main__":
     province = "Xinjiang"
     #provincial_solar("Hubei")
-    provincial_solar(province)
-    #solar_df = data_import.solar_power_import(solar_path)
-    #solar_df_province = solar_df[solar_df["State/Province"]== province]
-    #solar_df_province['index'] = range(0, len(solar_df_province))
-    #time_zone_shift_solar(solar_df_province, province)
+    #provincial_solar(province)
+    solar_df = data_import.solar_power_import(solar_path)
+    solar_df_province = solar_df[solar_df["State/Province"]== province]
+    solar_df_province['index'] = range(0, len(solar_df_province))
+    time_zone_shift_solar(solar_df_province, province)
     
     #provincial_wind(province)
     #wind_df = data_import.wind_power_import(wind_path)
