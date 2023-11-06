@@ -114,7 +114,7 @@ def provincial_wind(province):
 
     tk = 0
     
-    for i in range(117, len(wind_df)):
+    for i in range(232, len(wind_df)):
         if tk == (len(token_list)):
             tk = 0
         
@@ -181,7 +181,7 @@ def time_zone_shift_wind(df_name, province):
     return None
 
 if __name__ == "__main__":
-    province = "Guangdong"
+    province = "Hebei"
     #provincial_solar("Hubei")
     #provincial_solar(province)
     #solar_df = data_import.solar_power_import(solar_path)
