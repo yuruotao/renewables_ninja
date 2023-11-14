@@ -112,9 +112,9 @@ def provincial_wind(province):
     # Parameters
     year = "2022"
 
-    tk = 0
+    tk = 2
     
-    for i in range(113, len(wind_df)):
+    for i in range(0, len(wind_df)):
         if tk == (len(token_list)):
             tk = 0
         
@@ -181,7 +181,7 @@ def time_zone_shift_wind(df_name, province):
     return None
 
 if __name__ == "__main__":
-    province = "Yunnan" #Zhejiang
+    province = "Zhejiang"
     #provincial_solar("Hubei")
     #provincial_solar(province)
     #solar_df = data_import.solar_power_import(solar_path)
@@ -190,10 +190,10 @@ if __name__ == "__main__":
     #time_zone_shift_solar(solar_df_province, province)
     
     provincial_wind(province)
-    #wind_df = data_import.wind_power_import(wind_path)
-    #wind_df_province = wind_df[wind_df["State/Province"]== province]
-    #wind_df_province['index'] = range(0, len(wind_df_province))
-    #time_zone_shift_wind(wind_df_province, province)
+    wind_df = data_import.wind_power_import(wind_path)
+    wind_df_province = wind_df[wind_df["State/Province"]== province]
+    wind_df_province['index'] = range(0, len(wind_df_province))
+    time_zone_shift_wind(wind_df_province, province)
     
 
     
