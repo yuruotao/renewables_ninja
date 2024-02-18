@@ -6,6 +6,7 @@ import osmnx as ox
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import momepy
+import os
 
 from utils import data_import
 from utils import scraper_utils
@@ -77,6 +78,10 @@ def province_grid_mapping_solar(province, path, plot_state):
     Returns:
         _type_: _description_
     """
+    
+    if not os.path.exists(path):
+        os.makedirs(path)
+    
     # Add the provincial border line
     # https://data.humdata.org/dataset/cod-ab-chn
     gdf_provincial = gpd.read_file("./data/shape_data/"+ province + "/" + province + ".shp")
@@ -132,8 +137,11 @@ def province_grid_mapping_solar(province, path, plot_state):
 
     return None
 
+
+
 if __name__ == "__main__":
     
 
     for province in province_name_list:
-        province_grid_mapping_solar(province, "./results/figure/", 1)
+        province_grid_mapping_solar(province, "./results/figure/solar/", 1)
+    
