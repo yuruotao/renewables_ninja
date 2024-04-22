@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-
+import selenium
 
 class TESLA_crawler:
     def __init__(self):
@@ -57,19 +57,17 @@ class TESLA_crawler:
             div_text = nearest_div.text
             
             if "Superchargers" in div_text:
-                self.supercharger_list.append(self.supercharger_base_website + item.text + "/")
+                self.supercharger_list.append(self.supercharger_base_website + item.text + "#/")
             else:
                 self.supercharger_list.append(None)
                 
             if "Destination" in div_text:
-                self.destination_list.append(self.destination_base_website + item.text + "/")
+                self.destination_list.append(self.destination_base_website + item.text + "#/")
             else:
                 self.destination_list.append(None)
         
         print(self.country_list)
-        print(self.supercharger_list)
-        print(self.destination_list)
-        self.driver.quit()
+        #self.driver.close()
     
     def global_charger_crawl(self):
         # Number of countries
@@ -79,10 +77,13 @@ class TESLA_crawler:
             temp_country = self.country_list[i]
             self.temp_supercharger_website = self.supercharger_list[i]
             self.temp_destination_website = self.destination_list[i]
+            
             self.temp_supercharge_path = self.result_base_path + "/" + temp_country + "/supercharge/"
             self.temp_destination_path = self.result_base_path + "/" + temp_country + "/destination/"
             
             # Create folder
+            if not os.path.exists(self.result_base_path + "/" + temp_country):
+                os.mkdir(self.result_base_path + "/" + temp_country)
             if not os.path.exists(self.temp_supercharge_path):
                 os.mkdir(self.temp_supercharge_path)
             if not os.path.exists(self.temp_destination_path):
@@ -101,12 +102,15 @@ class TESLA_crawler:
                 pass
     
     def _links_obtain(self, website, save_path):
-        self.driver.minimize_window(website)
-        self.driver.get()
+        self.driver.minimize_window()
+        self.driver.get(website)
         
         # Click the language button
-        button = self.driver.find_element(By.ID, value="dx-nav-item--locale-selector")
-        button.click()
+        try:
+            button = self.driver.find_element(By.ID, value="dx-nav-item--locale-selector")
+            button.click()
+        except selenium.common.exceptions.NoSuchElementException:
+            pass
         
         self.link_list = []
         divs_elements = WebDriverWait(self.driver, 10).until(
@@ -127,12 +131,13 @@ class TESLA_crawler:
         lon_list = []
         info_list = []
         
+        print(self.link_list)
         for link in self.link_list:
             self._link_data_gather(link)
             
-    def _link_data_gather(self, link, save_path):
-        self.driver.minimize_window(link)
-        self.driver.get()
+    def _link_data_gather(self, link):
+        self.driver.minimize_window()
+        self.driver.get(link)
         
         # Click the language button
         button = self.driver.find_element(By.ID, value="dx-nav-item--locale-selector")
@@ -150,6 +155,8 @@ class TESLA_crawler:
             # Extract the value of the "href" attribute from the <a> element
             href_value = a_element.get_attribute("href")
             self.link_list.append(href_value)
+        
+        print(self.link_list)
     
     # The lower methods are for the chinese version website
     def cn_charger_crawl(self):
@@ -244,11 +251,15 @@ class TESLA_crawler:
         print(self.destination_list)
         self.driver.quit()
 
+    def _driver_close(self):
+        self.driver.close()
+
+      
 if __name__ == "__main__":
     
     # Crawl the global data
     crawler = TESLA_crawler()
     crawler.obtain_country_names()
-    
+    crawler.global_charger_crawl()
     
     # Crawl the china data
