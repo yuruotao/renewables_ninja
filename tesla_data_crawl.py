@@ -291,7 +291,7 @@ class TESLA_crawler:
         cn_super_province_num = len(self.cn_supercharger_list)
         cn_destination_province_num = len(self.cn_destination_list)
         # Superchargers
-        for i in range(0, cn_super_province_num):
+        for i in range(1, cn_super_province_num):
             print(i+1, "/", cn_super_province_num)
             temp_website = self.cn_supercharger_list[i]
             self._cn_links_obtain(temp_website, self.cn_result_base_path + "/supercharger")
@@ -341,11 +341,11 @@ class TESLA_crawler:
         counter = 0
         link_num = len(self.link_list)
         for counter in range(0, link_num):
-            print(str(counter), "/", link_num)
+            print(str(counter+1), "/", link_num)
             print(self.link_list[counter])
-            name, address, locality, lat_lon, operate_time, charging_power, charging_num, table = self._cn_info_aggregate(self.link_list[counter])
+            name, address, locality, lat_lon, operate_time, charging_power, charging_num, table = self._cn_info_aggregate(self.link_list[counter].replace("zh_cn/", ""))
             print(name, address, locality, lat_lon, operate_time, charging_power, charging_num, table)
-            time.sleep(1)
+            time.sleep(100)
             name_list.append(name)
             address_list.append(address)
             locality_list.append(locality)
@@ -364,14 +364,12 @@ class TESLA_crawler:
                                 "charging_num":charging_num_list,
                                 "table":table_list,
                                 "link":self.link_list})
-        country_df.to_excel(save_path + ".xlsx", index=False)
+        country_df.to_excel(save_path +  + ".xlsx", index=False)
 
     def _cn_info_aggregate(self, link):
         self.driver.minimize_window()
         self.driver.get(link)
         
-        current_url = self.driver.current_url
-
         # Click the language button
         try:
             button = self.driver.find_element(By.ID, value="dx-nav-item--locale-selector")
@@ -417,7 +415,7 @@ class TESLA_crawler:
         # Operate time
         operate_time_str = "开放时间"
         try:
-            operate_time_element = vcard_element.find_element(By.XPATH, value=f"//p[contains(text(), '{operate_time_str}')]")
+            operate_time_element = vcard_element.find_element(By.XPATH, value=f"//p[contains(normalize-space(), '{operate_time_str}')]")
             operate_time = operate_time_element.text.replace("\n", " ").lstrip("开放时间 ")
         except selenium.common.exceptions.NoSuchElementException:
             operate_time = np.nan
@@ -425,16 +423,14 @@ class TESLA_crawler:
         # Charging
         charging_power_str = "充电"
         try:
-            strong_element = vcard_element.find_element(By.XPATH, value=f"//p[contains(text(), '{charging_power_str}')]")
-            following_elements = strong_element.find_element(By.XPATH, value="following-sibling::*")
-            for following_element in following_elements:
-                temp_str = following_element.text
-                print(temp_str)
-            charging_power = np.nan
-            charging_num = np.nan  
+            max_power = vcard_element.find_element(By.XPATH, value="//text()[1]").text.strip()
+            num_chargers = vcard_element.find_element(By.XPATH, value="//text()[2]").text.strip()
+            print(max_power)
+            print(num_chargers)
+            
         except selenium.common.exceptions.NoSuchElementException:
-            charging_power = np.nan
-            charging_num = np.nan
+            max_power = np.nan
+            num_chargers = np.nan
             
         # Table
         try:
@@ -443,7 +439,7 @@ class TESLA_crawler:
         except selenium.common.exceptions.NoSuchElementException:
             table = np.nan
         
-        return name, address, locality, lat_lon, operate_time, charging_power, charging_num, table
+        return name, address, locality, lat_lon, operate_time, max_power, num_chargers, table
         #else:
             #return np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan
         
