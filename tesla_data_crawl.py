@@ -1,3 +1,4 @@
+# coding: utf-8
 import pandas as pd
 import numpy as np
 import os
@@ -10,6 +11,50 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import selenium
 import time
+import requests
+
+def get_lat_lon_from_address(address):
+    # API endpoint for Baidu Maps Geocoding API
+    url = "http://api.map.baidu.com/geocoding/v3/"
+
+    # Parameters for the API request
+    params = {
+        "address": address,
+        "output": "json",
+        "ak": "mTeb6B0dqzwPH8cCZynBsFrqHdCwGlO7"
+    }
+
+    # Make the API request
+    response = requests.get(url, params=params)
+    data = response.json()
+
+    # Extract latitude and longitude from the response
+    if data["status"] == 0:
+        location = data["result"]["location"]
+        lat = location["lat"]
+        lon = location["lng"]
+        return lat, lon
+    else:
+        print("Geocoding request failed. Error message:", data["message"])
+        return None, None
+
+class baidu_driver:
+    def __init__(self):
+        # Initiate the web driver and options
+        if not os.path.exists('./web_driver'):
+            os.mkdir('./web_driver')
+            self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager(version="110.0.5481.77").install()))
+        self.driver_path = './web_driver/chromedriver.exe'
+        
+        self.options = webdriver.ChromeOptions()
+        self.options.add_experimental_option('prefs', {'intl.accept_languages': 'en,en_US'})
+        self.options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        self.options.add_experimental_option("prefs", {"profile.managed_default_content_settings.images": 2})
+        self.options.add_argument("--window-size=2560,1440")
+        self.options.use_chromium = True
+        
+        self.service = ChromeService(executable_path=self.driver_path)
+        self.driver = webdriver.Chrome(service=self.service, options=self.options)
 
 class TESLA_crawler:
     def __init__(self):
@@ -210,31 +255,52 @@ class TESLA_crawler:
         
     # The lower methods are for the chinese version website
     def cn_charger_crawl(self):
-        # Number of countries
-        country_num = len(self.country_list)
+        self.driver.minimize_window()
+        self.driver.get(self.cn_base_website)
         
-        for i in range(0, country_num):
-            temp_country = self.country_list[i]
-            print(temp_country, str(i), "/", str(country_num))
-            self.temp_supercharger_website = self.supercharger_list[i]
-            self.temp_destination_website = self.destination_list[i]
-            
-            self.temp_save_path = self.result_base_path + "/" + temp_country + "/"
-            # Create folder
-            if not os.path.exists(self.temp_save_path):
-                os.mkdir(self.temp_save_path)
+        # Click the language button
+        try:
+            button = self.driver.find_element(By.ID, value="dx-nav-item--locale-selector")
+            button.click()
+        except selenium.common.exceptions.NoSuchElementException:
+            pass
+        
+        self.cn_supercharger_list = []
+        self.cn_destination_list = []
+        row_elements = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_all_elements_located((By.CLASS_NAME, "row"))
+        )
+        
+        for row_element in row_elements:
+            # Detect the supercharge and destination charge
+            try:
+                h2_element = row_element.find_element(By.TAG_NAME, value="h2")
+                if h2_element.text == "Tesla 超级充电站":
+                    a_elements = row_element.find_elements(By.TAG_NAME, value="a")
+                    for a_element in a_elements:
+                        self.cn_supercharger_list.append(a_element.get_attribute("href"))
+                elif h2_element.text == "Tesla 目的地充电":
+                    a_elements = row_element.find_elements(By.TAG_NAME, value="a")
+                    for a_element in a_elements:
+                        self.cn_supercharger_list.append(a_element.get_attribute("href"))
+                else:
+                    pass
+            except selenium.common.exceptions.NoSuchElementException:
+                pass
+        
+        cn_super_province_num = len(self.cn_supercharger_list)
+        cn_destination_province_num = len(self.cn_destination_list)
+        # Superchargers
+        for i in range(0, cn_super_province_num):
+            print(i+1, "/", cn_super_province_num)
+            temp_website = self.cn_supercharger_list[i]
+            self._cn_links_obtain(temp_website, self.cn_result_base_path + "/supercharger")
 
-            # Superchargers
-            if self.temp_supercharger_website != None:
-                self._cn_links_obtain(self.temp_supercharger_website, self.temp_save_path + "supercharger")
-            else:
-                pass
-            
-            # Destination chargers
-            if self.temp_destination_website != None:
-                self._cn_links_obtain(self.temp_destination_website, self.temp_save_path + "destination")
-            else:
-                pass
+        # Destination chargers
+        for j in range(0, cn_destination_province_num):
+            print(j+1, "/", cn_destination_province_num)
+            temp_website = self.cn_supercharger_list[i]
+            self._cn_links_obtain(temp_website, self.cn_result_base_path + "/destination")
             
         self._driver_close()
     
@@ -262,32 +328,42 @@ class TESLA_crawler:
             href_value = a_element.get_attribute("href")
             self.link_list.append(href_value)
         
+        
+        name_list = []
         address_list = []
         locality_list = []
-        lat_list = []
-        lon_list = []
-        info_list = []
+        lat_lon_list = []
+        operate_time_list = []
+        charging_power_list = []
+        charging_num_list = []
+        table_list = []
         
         counter = 0
         link_num = len(self.link_list)
         for counter in range(0, link_num):
             print(str(counter), "/", link_num)
             print(self.link_list[counter])
-            address, locality, lat, lon, info = self._cn_info_aggregate(self.link_list[counter])
-            print(address, locality, lat, lon, info)
+            name, address, locality, lat_lon, operate_time, charging_power, charging_num, table = self._cn_info_aggregate(self.link_list[counter])
+            print(name, address, locality, lat_lon, operate_time, charging_power, charging_num, table)
             time.sleep(1)
+            name_list.append(name)
             address_list.append(address)
             locality_list.append(locality)
-            lat_list.append(lat)
-            lon_list.append(lon)
-            info_list.append(info)
+            lat_lon_list.append(lat_lon)
+            operate_time_list.append(operate_time)
+            charging_power_list.append(charging_power)
+            charging_num_list.append(charging_num)
+            table_list.append(table)
 
-        country_df = pd.DataFrame({"address":address_list, 
-                                   "locality":locality_list,
-                                   "lat":lat_list,
-                                   "lon":lon_list,
-                                   "info":info_list,
-                                   "link":self.link_list})
+        country_df = pd.DataFrame({"name":name_list,
+                                    "address":address_list, 
+                                "locality":locality_list,
+                                "lat_lon":lat_lon_list,
+                                "operate_time":operate_time_list,
+                                "charging_power":charging_power_list,
+                                "charging_num":charging_num_list,
+                                "table":table_list,
+                                "link":self.link_list})
         country_df.to_excel(save_path + ".xlsx", index=False)
 
     def _cn_info_aggregate(self, link):
@@ -295,52 +371,81 @@ class TESLA_crawler:
         self.driver.get(link)
         
         current_url = self.driver.current_url
-        if link in current_url:
-            # Click the language button
-            try:
-                button = self.driver.find_element(By.ID, value="dx-nav-item--locale-selector")
-                button.click()
-            except selenium.common.exceptions.NoSuchElementException:
-                pass
+
+        # Click the language button
+        try:
+            button = self.driver.find_element(By.ID, value="dx-nav-item--locale-selector")
+            button.click()
+        except selenium.common.exceptions.NoSuchElementException:
+            pass
+        
+        # Get the elements
+        vcard_elements = WebDriverWait(self.driver, 100).until(
+            EC.presence_of_all_elements_located((By.CLASS_NAME, "vcard"))
+        )
+        vcard_element = vcard_elements[0]
+        
+        # Name
+        try:
+            name_element = vcard_element.find_element(By.CLASS_NAME, value="common-name")
+            name = name_element.text.replace("\n", " ")
+        except selenium.common.exceptions.NoSuchElementException:
+            name = np.nan
+        
+        # Address
+        try:
+            address_element = vcard_element.find_element(By.CLASS_NAME, value="street-address")
+            address = address_element.text.replace("\n", " ")
+        except selenium.common.exceptions.NoSuchElementException:
+            address = np.nan
+        
+        # Locality
+        try:
+            locality_element = vcard_element.find_element(By.CLASS_NAME, value="locality")
+            locality = locality_element.text.replace("\n", " ")
+        except selenium.common.exceptions.NoSuchElementException:
+            locality = np.nan
+        
+        # Lat lon link
+        driving_directions = "行车路线"
+        try:
+            lat_lon_element = vcard_element.find_element(By.XPATH, value=f"//a[contains(text(), '{driving_directions}')]")
+            lat_lon = lat_lon_element.get_attribute("href")
+        except selenium.common.exceptions.NoSuchElementException:
+            lat_lon = np.nan
+        
+        # Operate time
+        operate_time_str = "开放时间"
+        try:
+            operate_time_element = vcard_element.find_element(By.XPATH, value=f"//p[contains(text(), '{operate_time_str}')]")
+            operate_time = operate_time_element.text.replace("\n", " ").lstrip("开放时间 ")
+        except selenium.common.exceptions.NoSuchElementException:
+            operate_time = np.nan
+        
+        # Charging
+        charging_power_str = "充电"
+        try:
+            strong_element = vcard_element.find_element(By.XPATH, value=f"//p[contains(text(), '{charging_power_str}')]")
+            following_elements = strong_element.find_element(By.XPATH, value="following-sibling::*")
+            for following_element in following_elements:
+                temp_str = following_element.text
+                print(temp_str)
+            charging_power = np.nan
+            charging_num = np.nan  
+        except selenium.common.exceptions.NoSuchElementException:
+            charging_power = np.nan
+            charging_num = np.nan
             
-            # Get the elements
-            vcard_elements = WebDriverWait(self.driver, 100).until(
-                EC.presence_of_all_elements_located((By.CLASS_NAME, "vcard"))
-            )
-            vcard_element = vcard_elements[0]
-            
-            try:
-                address_element = vcard_element.find_element(By.CLASS_NAME, value="street-address")
-                address = address_element.text.replace("\n", " ")
-            except selenium.common.exceptions.NoSuchElementException:
-                address = np.nan
-            
-            try:
-                locality_element = vcard_element.find_element(By.CLASS_NAME, value="locality")
-                locality = locality_element.text.replace("\n", " ")
-            except selenium.common.exceptions.NoSuchElementException:
-                locality = np.nan
-            
-            driving_directions = "Driving Directions"
-            try:
-                lat_lon_element = vcard_element.find_element(By.XPATH, value=f"//a[contains(text(), '{driving_directions}')]")
-                lat_lon = lat_lon_element.get_attribute("href").split("=")[-1].split(",")
-                lat = float(lat_lon[0])
-                lon = float(lat_lon[1])
-            except selenium.common.exceptions.NoSuchElementException:
-                lat = np.nan
-                lon = np.nan
-                
-            charging = "Charging"
-            try:
-                info_element = vcard_element.find_element(By.XPATH, value=f"//p[contains(text(), '{charging}')]")
-                info = info_element.text.replace("\n", " ").lstrip("Charging ")
-            except selenium.common.exceptions.NoSuchElementException:
-                info = np.nan
-            
-            return address, locality, lat, lon, info
-        else:
-            return np.nan, np.nan, np.nan, np.nan, np.nan
+        # Table
+        try:
+            table_element = vcard_element.find_element(By.CLASS_NAME, value="tds-table-body")
+            table = table_element.text
+        except selenium.common.exceptions.NoSuchElementException:
+            table = np.nan
+        
+        return name, address, locality, lat_lon, operate_time, charging_power, charging_num, table
+        #else:
+            #return np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan
         
     def _driver_close(self):
         self.driver.close()
@@ -349,9 +454,10 @@ class TESLA_crawler:
 if __name__ == "__main__":
     
     # Crawl the global data
-    crawler = TESLA_crawler()
-    crawler.obtain_country_names()
-    crawler.global_charger_crawl()
+    #crawler = TESLA_crawler()
+    #crawler.obtain_country_names()
+    #crawler.global_charger_crawl()
     
     # Crawl the china data
-    
+    crawler = TESLA_crawler()
+    crawler.cn_charger_crawl()
