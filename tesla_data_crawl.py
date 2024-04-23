@@ -11,6 +11,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import selenium
 import time
+import re
 import requests
 
 def get_lat_lon_from_address(address):
@@ -291,7 +292,7 @@ class TESLA_crawler:
         cn_super_province_num = len(self.cn_supercharger_list)
         cn_destination_province_num = len(self.cn_destination_list)
         # Superchargers
-        for i in range(1, cn_super_province_num):
+        for i in range(0, cn_super_province_num):
             print(i+1, "/", cn_super_province_num)
             temp_website = self.cn_supercharger_list[i]
             self._cn_links_obtain(temp_website, self.cn_result_base_path + "/supercharger")
@@ -299,7 +300,7 @@ class TESLA_crawler:
         # Destination chargers
         for j in range(0, cn_destination_province_num):
             print(j+1, "/", cn_destination_province_num)
-            temp_website = self.cn_supercharger_list[i]
+            temp_website = self.cn_supercharger_list[j]
             self._cn_links_obtain(temp_website, self.cn_result_base_path + "/destination")
             
         self._driver_close()
@@ -345,7 +346,7 @@ class TESLA_crawler:
             print(self.link_list[counter])
             name, address, locality, lat_lon, operate_time, charging_power, charging_num, table = self._cn_info_aggregate(self.link_list[counter].replace("zh_cn/", ""))
             print(name, address, locality, lat_lon, operate_time, charging_power, charging_num, table)
-            time.sleep(100)
+            
             name_list.append(name)
             address_list.append(address)
             locality_list.append(locality)
@@ -421,13 +422,20 @@ class TESLA_crawler:
             operate_time = np.nan
         
         # Charging
-        charging_power_str = "充电"
         try:
-            max_power = vcard_element.find_element(By.XPATH, value="//text()[1]").text.strip()
-            num_chargers = vcard_element.find_element(By.XPATH, value="//text()[2]").text.strip()
-            print(max_power)
-            print(num_chargers)
-            
+            vcard_text = vcard_element.text
+            max_power_match = re.search(r'最大功率可达\s+(\d+\s*kW)', vcard_text)
+            num_chargers_match = re.search(r'(\d+)\s*个超级充电桩', vcard_text)
+
+            if max_power_match:
+                max_power = max_power_match.group(1)
+            else:
+                max_power = np.nan
+
+            if num_chargers_match:
+                num_chargers = num_chargers_match.group(1)
+            else:
+                num_chargers = np.nan
         except selenium.common.exceptions.NoSuchElementException:
             max_power = np.nan
             num_chargers = np.nan
