@@ -70,6 +70,7 @@ class TESLA_crawler:
         self.options.add_experimental_option('excludeSwitches', ['enable-logging'])
         self.options.add_experimental_option("prefs", {"profile.managed_default_content_settings.images": 2})
         self.options.add_argument("--window-size=2560,1440")
+        self.options.add_argument('--blink-settings=imagesEnabled=false')
         self.options.use_chromium = True
         
         self.service = ChromeService(executable_path=self.driver_path)
@@ -121,12 +122,20 @@ class TESLA_crawler:
         # Number of countries
         country_num = len(self.country_list)
         
-        # 19
-        for i in range(32, country_num):
+        # 19(UK), 32(Italy)
+        for i in range(38, country_num):
             temp_country = self.country_list[i]
             print(temp_country, str(i), "/", str(country_num))
-            self.temp_supercharger_website = self.supercharger_list[i].replace(" ", "+")
-            self.temp_destination_website = self.destination_list[i].replace(" ", "+")
+            
+            try:
+                self.temp_supercharger_website = self.supercharger_list[i].replace(" ", "+")
+            except AttributeError:
+                self.temp_supercharger_website = self.supercharger_list[i]
+                
+            try:
+                self.temp_destination_website = self.destination_list[i].replace(" ", "+")
+            except AttributeError:
+                self.temp_destination_website = self.destination_list[i]
             
             self.temp_save_path = self.result_base_path + "/" + temp_country + "/"
             # Create folder
