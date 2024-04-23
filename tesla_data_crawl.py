@@ -321,6 +321,12 @@ class TESLA_crawler:
             EC.presence_of_all_elements_located((By.CLASS_NAME, "anchor-container"))
         )
         
+        h1_elements = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_all_elements_located((By.TAG_NAME, "h1"))
+        )
+        h1_element = h1_elements[1]
+        province = h1_element.text.split(" - ")[1]
+        
         for div_element in divs_elements:
             # Find the <a> element within the <div> element
             a_element = div_element.find_element(By.TAG_NAME, value="a")
@@ -328,7 +334,6 @@ class TESLA_crawler:
             # Extract the value of the "href" attribute from the <a> element
             href_value = a_element.get_attribute("href")
             self.link_list.append(href_value)
-        
         
         name_list = []
         address_list = []
@@ -339,7 +344,6 @@ class TESLA_crawler:
         charging_num_list = []
         table_list = []
         
-        counter = 0
         link_num = len(self.link_list)
         for counter in range(0, link_num):
             print(str(counter+1), "/", link_num)
@@ -365,7 +369,7 @@ class TESLA_crawler:
                                 "charging_num":charging_num_list,
                                 "table":table_list,
                                 "link":self.link_list})
-        country_df.to_excel(save_path +  + ".xlsx", index=False)
+        country_df.to_excel(save_path + province + ".xlsx", index=False)
 
     def _cn_info_aggregate(self, link):
         self.driver.minimize_window()
