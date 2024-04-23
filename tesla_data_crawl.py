@@ -180,12 +180,12 @@ class TESLA_crawler:
             
             counter = 0
             link_num = len(self.link_list)
-            for counter in range(0, link_num):
+            for counter in range(19, link_num):
                 print(str(counter), "/", link_num)
                 print(self.link_list[counter])
                 address, locality, lat, lon, info = self._info_aggregate(self.link_list[counter])
                 print(address, locality, lat, lon, info)
-                time.sleep(1)
+                #time.sleep(1)
                 address_list.append(address)
                 locality_list.append(locality)
                 lat_list.append(lat)
