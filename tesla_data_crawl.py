@@ -283,7 +283,7 @@ class TESLA_crawler:
                 elif h2_element.text == "Tesla 目的地充电":
                     a_elements = row_element.find_elements(By.TAG_NAME, value="a")
                     for a_element in a_elements:
-                        self.cn_supercharger_list.append(a_element.get_attribute("href"))
+                        self.cn_destination_list.append(a_element.get_attribute("href"))
                 else:
                     pass
             except selenium.common.exceptions.NoSuchElementException:
@@ -291,8 +291,9 @@ class TESLA_crawler:
         
         cn_super_province_num = len(self.cn_supercharger_list)
         cn_destination_province_num = len(self.cn_destination_list)
+
         # Superchargers
-        for i in range(0, cn_super_province_num):
+        for i in range(8, cn_super_province_num):
             print(i+1, "/", cn_super_province_num)
             temp_website = self.cn_supercharger_list[i]
             self._cn_links_obtain(temp_website, self.cn_result_base_path + "/supercharger")
