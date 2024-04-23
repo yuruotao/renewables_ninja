@@ -299,7 +299,7 @@ class TESLA_crawler:
             self._cn_links_obtain(temp_website, self.cn_result_base_path + "/supercharger")
 
         # Destination chargers
-        for j in range(0, cn_destination_province_num):
+        for j in range(3, cn_destination_province_num):
             print(j+1, "/", cn_destination_province_num)
             temp_website = self.cn_supercharger_list[j]
             self._cn_links_obtain(temp_website, self.cn_result_base_path + "/destination")
