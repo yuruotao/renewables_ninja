@@ -299,7 +299,7 @@ class TESLA_crawler:
             self._cn_links_obtain(temp_website, self.cn_result_base_path + "/supercharger")
 
         # Destination chargers
-        for j in range(3, cn_destination_province_num):
+        for j in range(32, cn_destination_province_num):
             print(j+1, "/", cn_destination_province_num)
             temp_website = self.cn_supercharger_list[j]
             self._cn_links_obtain(temp_website, self.cn_result_base_path + "/destination")
@@ -463,10 +463,10 @@ class TESLA_crawler:
 if __name__ == "__main__":
     
     # Crawl the global data
-    #crawler = TESLA_crawler()
-    #crawler.obtain_country_names()
-    #crawler.global_charger_crawl()
+    crawler = TESLA_crawler()
+    crawler.obtain_country_names()
+    crawler.global_charger_crawl()
     
     # Crawl the china data
-    crawler = TESLA_crawler()
-    crawler.cn_charger_crawl()
+    #crawler = TESLA_crawler()
+    #crawler.cn_charger_crawl()
