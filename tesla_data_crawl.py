@@ -121,7 +121,8 @@ class TESLA_crawler:
         # Number of countries
         country_num = len(self.country_list)
         
-        for i in range(3, country_num):
+        # 19
+        for i in range(32, country_num):
             temp_country = self.country_list[i]
             print(temp_country, str(i), "/", str(country_num))
             self.temp_supercharger_website = self.supercharger_list[i].replace(" ", "+")
@@ -178,9 +179,8 @@ class TESLA_crawler:
             lon_list = []
             info_list = []
             
-            counter = 0
             link_num = len(self.link_list)
-            for counter in range(19, link_num):
+            for counter in range(0, link_num):
                 print(str(counter), "/", link_num)
                 print(self.link_list[counter])
                 address, locality, lat, lon, info = self._info_aggregate(self.link_list[counter])
