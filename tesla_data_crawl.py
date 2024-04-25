@@ -122,8 +122,8 @@ class TESLA_crawler:
         # Number of countries
         country_num = len(self.country_list)
         
-        # 19(UK), 32(Italy)
-        for i in range(38, country_num):
+        # 19(UK), 32(Italy), 48(Turkey)
+        for i in range(49, 49):
             temp_country = self.country_list[i]
             print(temp_country, str(i), "/", str(country_num))
             
