@@ -472,10 +472,23 @@ class TESLA_crawler:
 if __name__ == "__main__":
     
     # Crawl the global data
-    crawler = TESLA_crawler()
-    crawler.obtain_country_names()
-    crawler.global_charger_crawl()
+    #crawler = TESLA_crawler()
+    #crawler.obtain_country_names()
+    #crawler.global_charger_crawl()
     
     # Crawl the china data
     #crawler = TESLA_crawler()
     #crawler.cn_charger_crawl()
+    x = os.listdir('./results/tesla_cn/')
+    for i in range(len(x)):
+        temp_df = pd.read_excel('./results/tesla_cn/' + x[i])
+        if i == 0:
+            df = temp_df
+        else:
+            df = pd.concat([df, temp_df], ignore_index=True).reset_index(drop=True)
+    print(df)
+    
+    df = df.dropna(subset=['name']).reset_index(drop=True)
+    print(df)
+    column_sum = df['charging_num'].sum()
+    print(column_sum)
