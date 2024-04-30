@@ -482,13 +482,16 @@ if __name__ == "__main__":
     x = os.listdir('./results/tesla_cn/')
     for i in range(len(x)):
         temp_df = pd.read_excel('./results/tesla_cn/' + x[i])
+        province_name = x[i].lstrip("destination").rstrip(".xlsx")
+        temp_df["Province"] = province_name
         if i == 0:
             df = temp_df
         else:
             df = pd.concat([df, temp_df], ignore_index=True).reset_index(drop=True)
     print(df)
     
-    df = df.dropna(subset=['name']).reset_index(drop=True)
-    print(df)
+    
+    #df = df.dropna(subset=['name']).reset_index(drop=True)
+    #print(df)
     column_sum = df['charging_num'].sum()
     print(column_sum)
