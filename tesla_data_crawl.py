@@ -484,7 +484,11 @@ if __name__ == "__main__":
     x = os.listdir('./results/tesla_cn/')
     for i in range(len(x)):
         temp_df = pd.read_excel('./results/tesla_cn/' + x[i])
-        province_name = x[i].lstrip("destination").lstrip("upercharger").rstrip(".xlsx")
+        if x[i].startswith("destination"):
+            province_name = x[i].lstrip("destination").rstrip(".xlsx")
+        elif x[i].startswith("upercharger"):
+            province_name = x[i].lstrip("upercharger").rstrip(".xlsx")
+        
         temp_df["Province"] = province_name
         if i == 0:
             df = temp_df
@@ -547,9 +551,13 @@ if __name__ == "__main__":
         else:
             return None, None
     
-    df["lat"], df["lon"] = zip(*df['address'].apply(geocode))
-    
-    print(df)
+    #df["lat"], df["lon"] = zip(*df['address'].apply(geocode))
+    df_filtered = df.dropna(subset=['name'])
 
-    df.drop(["link", "table", "lat_lon"], axis=1, inplace=True)
-    df.to_excel("./results/tesla_cn.xlsx", index=False)
+    # Apply the geocoding function only to the filtered DataFrame
+    df_filtered[["lat", "lon"]] = pd.DataFrame(df_filtered['address'].apply(geocode).tolist(), index=df_filtered.index)
+    result_df = df.merge(df_filtered[['name', 'lat', 'lon']], how='left', on='name')
+
+    df_filtered.drop(["table", "lat_lon"], axis=1, inplace=True)
+    df_filtered.to_excel("./results/tesla_cn.xlsx", index=False)
+    
