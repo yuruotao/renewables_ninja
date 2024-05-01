@@ -285,11 +285,11 @@ class TESLA_crawler:
             # Detect the supercharge and destination charge
             try:
                 h2_element = row_element.find_element(By.TAG_NAME, value="h2")
-                if h2_element.text == "Tesla 超级充电站":
+                if h2_element.text == "Tesla 超级充电站?":
                     a_elements = row_element.find_elements(By.TAG_NAME, value="a")
                     for a_element in a_elements:
                         self.cn_supercharger_list.append(a_element.get_attribute("href"))
-                elif h2_element.text == "Tesla 目的地充电":
+                elif h2_element.text == "Tesla 目的地充电?":
                     a_elements = row_element.find_elements(By.TAG_NAME, value="a")
                     for a_element in a_elements:
                         self.cn_destination_list.append(a_element.get_attribute("href"))
@@ -428,10 +428,10 @@ class TESLA_crawler:
             lat_lon = np.nan
         
         # Operate time
-        operate_time_str = "开放时间"
+        operate_time_str = "开放时间?"
         try:
             operate_time_element = vcard_element.find_element(By.XPATH, value=f"//p[contains(normalize-space(), '{operate_time_str}')]")
-            operate_time = operate_time_element.text.replace("\n", " ").lstrip("开放时间 ")
+            operate_time = operate_time_element.text.replace("\n", " ").lstrip("开放时间? ")
         except selenium.common.exceptions.NoSuchElementException:
             operate_time = np.nan
         
@@ -479,19 +479,77 @@ if __name__ == "__main__":
     # Crawl the china data
     #crawler = TESLA_crawler()
     #crawler.cn_charger_crawl()
+    
+    # Post processing
     x = os.listdir('./results/tesla_cn/')
     for i in range(len(x)):
         temp_df = pd.read_excel('./results/tesla_cn/' + x[i])
-        province_name = x[i].lstrip("destination").rstrip(".xlsx")
+        province_name = x[i].lstrip("destination").lstrip("upercharger").rstrip(".xlsx")
         temp_df["Province"] = province_name
         if i == 0:
             df = temp_df
         else:
             df = pd.concat([df, temp_df], ignore_index=True).reset_index(drop=True)
+    
+    # Charging power
+    df['charging_power'] = df['charging_power'].str.rstrip(" kW").astype(float).fillna(0)
+    
+    # Charging number
+    df['charging_num'] = df['charging_num'].fillna(0).astype(int)
+
+    # Table
+    def extract_electricity_prices(row):
+        # Regular expression to match the pattern: HH:MM-HH:MM ¥ <price>/度
+        pattern = r'(\d{2}:\d{2})-(\d{2}:\d{2}) ¥ (\d+\.\d+)/度'
+        try:
+            matches = re.findall(pattern, row)
+            prices = {f"{hour}:00": float(price) for start, end, price in matches for hour in range(int(start[:2]), int(end[:2]))}
+        except TypeError:
+            prices = np.nan
+        
+        return prices
+
+    def extract_overtime_fee(row):
+        
+        # Regular expression to match the pattern: ¥ <price>/分钟
+        pattern = r'¥ (\d+\.\d+)/分钟'
+        try:
+            match = re.search(pattern, row)
+        except TypeError:
+            return np.nan
+        
+        if match:
+            return float(match.group(1))
+        else:
+            return np.nan
+
+    # Apply the functions to extract electricity price and overtime fee
+    df['electricity_price'] = df['table'].apply(extract_electricity_prices)
+    df['overtime_fee'] = df['table'].apply(extract_overtime_fee)
+    
+    # Get the lat and lon of the locations for tesla_cn with BaiduMap
+    def geocode(address):
+        url = "http://api.map.baidu.com/geocoding/v3/"
+        params = {
+            "address": address,
+            "output": "json",
+            "ak": "supfrXQAJmNUDnXmquZxmLYtbpARWcpV"
+        }
+        response = requests.get(url, params=params)
+        print(response)
+        data = response.json()
+        print(data)
+        if data["status"] == 0 and address != np.nan:  # Status code 0 indicates success
+            location = data["result"]["location"]
+            latitude = location["lat"]
+            longitude = location["lng"]
+            return latitude, longitude
+        else:
+            return None, None
+    
+    df["lat"], df["lon"] = zip(*df['address'].apply(geocode))
+    
     print(df)
-    
-    
-    #df = df.dropna(subset=['name']).reset_index(drop=True)
-    #print(df)
-    column_sum = df['charging_num'].sum()
-    print(column_sum)
+
+    df.drop(["link", "table", "lat_lon"], axis=1, inplace=True)
+    df.to_excel("./results/tesla_cn.xlsx", index=False)
