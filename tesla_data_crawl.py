@@ -12,6 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import selenium
 import time
 import re
+import pickle
 import requests
 
 def get_lat_lon_from_address(address):
@@ -552,12 +553,15 @@ if __name__ == "__main__":
             return None, None
     
     #df["lat"], df["lon"] = zip(*df['address'].apply(geocode))
-    df_filtered = df.dropna(subset=['name'])
+    #df_filtered = df.dropna(subset=['name'])
 
     # Apply the geocoding function only to the filtered DataFrame
-    df_filtered[["lat", "lon"]] = pd.DataFrame(df_filtered['address'].apply(geocode).tolist(), index=df_filtered.index)
+    #df_filtered[["lat", "lon"]] = pd.DataFrame(df_filtered['address'].apply(geocode).tolist(), index=df_filtered.index)
+    df_filtered = pd.read_excel("./results/tesla_cn.xlsx")
     result_df = df.merge(df_filtered[['name', 'lat', 'lon']], how='left', on='name')
 
-    df_filtered.drop(["table", "lat_lon"], axis=1, inplace=True)
-    df_filtered.to_excel("./results/tesla_cn.xlsx", index=False)
+    result_df.drop(["table", "lat_lon"], axis=1, inplace=True)
+    print(result_df)
+    result_df.to_excel("./results/tesla_cn.xlsx", index=False)
+    
     
