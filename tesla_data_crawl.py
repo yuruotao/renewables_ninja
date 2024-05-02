@@ -10,10 +10,31 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import selenium
+import osmnx as ox
+import momepy
+import matplotlib.pyplot as plt
+from shapely.wkt import loads
 import time
 import re
 import pickle
 import requests
+import geopandas as gpd
+
+def df_to_gdf(df, lon_name, lat_name):
+    import pandas as pd
+    import geopandas as gpd
+    from shapely.geometry import Point
+    
+    # Designate the coordinate system
+    crs = {'init':'EPSG:4326'}
+    # Construct the geometry for geodataframe
+    geometry = [Point(xy) for xy in zip(df[lon_name], df[lat_name])]
+    gdf = gpd.GeoDataFrame(df, 
+                          crs = crs, 
+                          geometry = geometry)
+    
+    return gdf
+
 
 def get_lat_lon_from_address(address):
     # API endpoint for Baidu Maps Geocoding API
@@ -482,6 +503,7 @@ if __name__ == "__main__":
     #crawler.cn_charger_crawl()
     
     # Post processing
+    """
     x = os.listdir('./results/tesla_cn/')
     for i in range(len(x)):
         temp_df = pd.read_excel('./results/tesla_cn/' + x[i])
@@ -552,16 +574,89 @@ if __name__ == "__main__":
         else:
             return None, None
     
-    #df["lat"], df["lon"] = zip(*df['address'].apply(geocode))
-    #df_filtered = df.dropna(subset=['name'])
+    df["lat"], df["lon"] = zip(*df['address'].apply(geocode))
+    df_filtered = df.dropna(subset=['name'])
 
     # Apply the geocoding function only to the filtered DataFrame
-    #df_filtered[["lat", "lon"]] = pd.DataFrame(df_filtered['address'].apply(geocode).tolist(), index=df_filtered.index)
-    df_filtered = pd.read_excel("./results/tesla_cn.xlsx")
+    df_filtered[["lat", "lon"]] = pd.DataFrame(df_filtered['address'].apply(geocode).tolist(), index=df_filtered.index)
     result_df = df.merge(df_filtered[['name', 'lat', 'lon']], how='left', on='name')
-
     result_df.drop(["table", "lat_lon"], axis=1, inplace=True)
-    print(result_df)
     result_df.to_excel("./results/tesla_cn.xlsx", index=False)
+    """
+    
+    # Visualization
+    tesla_df = pd.read_excel("./results/tesla_cn.xlsx")
+    tesla_df = tesla_df.dropna(subset=['lat'])
+    province = "Guangxi"
+    gdf_province = gpd.read_file("./data/shape_data/"+ province + "/" + province + ".shp")
+    gdf_china = gpd.read_file("./data/shape_data/China/chn_admbnda_adm1_ocha_2020.shp")
+    tesla_gdf = df_to_gdf(tesla_df, "lon", "lat")
+    
+    # Plot for china
+    plt.figure(figsize=(20, 15))
+    gdf_china.boundary.plot(linewidth=0.5, color="#adb5bd", zorder=1)
+    bounds = gdf_china.total_bounds
+    ax = plt.gca()
+    
+    # Set the aspect of the plot to be equal
+    ax.set_aspect('equal')
+    extend = 0.2
+    ax.set_xlim(bounds[0]-extend, bounds[2]+extend)
+    ax.set_ylim(bounds[1]-extend, bounds[3]+extend)
+    ax.axis('off')
+    
+    ratio = 0.05
+    num_ratio = 0.001
+    
+    for index, row in tesla_gdf.iterrows():
+        circle_1 = plt.Circle((row.geometry.x, row.geometry.y), radius=row["charging_num"]*num_ratio, color='#0077b6', alpha=0.8)
+        ax.add_artist(circle_1)
+
+    example_1 = 5
+    example_2 = 10
+    
+    circle_3 = plt.Circle((bounds[0]+1, bounds[3]-2.2), radius=example_1*num_ratio, color='#0077b6', alpha=1)
+    ax.add_artist(circle_3)
+    
+    circle_4 = plt.Circle((bounds[0]+1, bounds[3]-1.5), radius=example_2*num_ratio, color='#0077b6', alpha=1)
+    ax.add_artist(circle_4)
+    
+    plt.savefig("./results/tesla_cn.png", dpi=900)
+    plt.close()
+    
+    # Plot for province
+    tesla_province = gpd.sjoin(tesla_gdf, gdf_province, how='inner', op='within')
+    plt.figure(figsize=(20, 15))
+    gdf_province.boundary.plot(linewidth=0.5, color="#adb5bd", zorder=1)
+    bounds = gdf_province.total_bounds
+    ax = plt.gca()
+    
+    # Set the aspect of the plot to be equal
+    ax.set_aspect('equal')
+    extend = 0.2
+    ax.set_xlim(bounds[0]-extend, bounds[2]+extend)
+    ax.set_ylim(bounds[1]-extend, bounds[3]+extend)
+    ax.axis('off')
+    
+    ratio = 0.05
+    num_ratio = 0.002
+    
+    for index, row in tesla_gdf.iterrows():
+        circle_1 = plt.Circle((row.geometry.x, row.geometry.y), radius=row["charging_num"]*num_ratio, color='#0077b6', alpha=0.8)
+        ax.add_artist(circle_1)
+
+    example_1 = 5
+    example_2 = 10
+    
+    circle_3 = plt.Circle((bounds[0]+1, bounds[3]-2.2), radius=example_1*num_ratio, color='#0077b6', alpha=1)
+    ax.add_artist(circle_3)
+    
+    circle_4 = plt.Circle((bounds[0]+1, bounds[3]-1.5), radius=example_2*num_ratio, color='#0077b6', alpha=1)
+    ax.add_artist(circle_4)
+    
+    plt.savefig("./results/tesla_province.png", dpi=900)
+    plt.close()
+    
+    
     
     
