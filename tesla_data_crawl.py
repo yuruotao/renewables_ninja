@@ -494,9 +494,9 @@ class TESLA_crawler:
 if __name__ == "__main__":
     
     # Crawl the global data
-    #crawler = TESLA_crawler()
-    #crawler.obtain_country_names()
-    #crawler.global_charger_crawl()
+    crawler = TESLA_crawler()
+    crawler.obtain_country_names()
+    crawler.global_charger_crawl()
     
     # Crawl the china data
     #crawler = TESLA_crawler()

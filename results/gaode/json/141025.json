@@ -1,0 +1,203 @@
+[
+  {
+    "parent": [],
+    "address": "\u5eb7\u5e84\u8857",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "2.1"
+    },
+    "biz_type": [],
+    "cityname": "\u4e34\u6c7e\u5e02",
+    "type": "\u6c7d\u8f66\u670d\u52a1;\u5145\u7535\u7ad9;\u5145\u7535\u7ad9",
+    "photos": [
+      {
+        "title": "1",
+        "url": "http://store.is.autonavi.com/showpic/7b952c9b43c340f6a947272102fba90d"
+      },
+      {
+        "title": "1",
+        "url": "http://store.is.autonavi.com/showpic/ff027549efaabfb1f97408ca7ac99e11"
+      },
+      {
+        "title": "1",
+        "url": "http://store.is.autonavi.com/showpic/0aafedb62d30a2d532fedc6788ccc319"
+      }
+    ],
+    "typecode": "011100",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u53e4\u53bf",
+    "name": "\u56fd\u5bb6\u7535\u7f51\u6c7d\u8f66\u5145\u7535\u7ad9(\u5c71\u897f\u7701\u4e34\u6c7e\u5e02\u53e4\u53bf\u5eb7\u5e84\u8857\u5145\u7535\u7ad9)",
+    "location": "111.917712,36.261346",
+    "tel": [],
+    "shopid": [],
+    "id": "B0FFMB1FRN"
+  },
+  {
+    "parent": [],
+    "address": "\u5cb3\u9633\u9547\u5cb3\u9633\u8def\u68ee\u6da6\u5c0f\u533a",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "3.1"
+    },
+    "biz_type": [],
+    "cityname": "\u4e34\u6c7e\u5e02",
+    "type": "\u6c7d\u8f66\u670d\u52a1;\u5145\u7535\u7ad9;\u5145\u7535\u7ad9",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/b2decd482c9f51a0011d1891483e9aab"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/12e6689fbb9d68bf624cffa49223bfbc"
+      },
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/6a6ea19524a51bd57be515f1a38df312.jpg"
+      }
+    ],
+    "typecode": "011100",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u53e4\u53bf",
+    "name": "\u7279\u6765\u7535\u5145\u7535\u7ad9(\u53e4\u53bf\u68ee\u6da6\u5e7f\u573a\u5145\u7535\u7ad9)",
+    "location": "111.926363,36.272938",
+    "tel": "13403579025",
+    "shopid": [],
+    "id": "B0JU67TR6A"
+  },
+  {
+    "parent": "B0FFHTLSBY",
+    "address": "\u767d\u5bb6\u5e84\u505c\u8f66\u533a\u4e0eG22\u9752\u5170\u9ad8\u901f\u4ea4\u53c9\u53e3\u897f240\u7c73",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": []
+    },
+    "biz_type": [],
+    "cityname": "\u4e34\u6c7e\u5e02",
+    "type": "\u6c7d\u8f66\u670d\u52a1;\u5145\u7535\u7ad9;\u5145\u7535\u7ad9",
+    "photos": [],
+    "typecode": "011100",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "311",
+    "adname": "\u53e4\u53bf",
+    "name": "\u767d\u5bb6\u5e84\u505c\u8f66\u533a\u7535\u52a8\u6c7d\u8f66\u5145\u7535\u7ad9",
+    "location": "111.935319,36.163692",
+    "tel": [],
+    "shopid": [],
+    "id": "B0J0DSPATA"
+  },
+  {
+    "parent": "B0FFHTLQI9",
+    "address": "G22\u9752\u5170\u9ad8\u901f\u4e0e\u767d\u5bb6\u5e84\u505c\u8f66\u533a\u4ea4\u53c9\u53e3\u4e1c220\u7c73",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": []
+    },
+    "biz_type": [],
+    "cityname": "\u4e34\u6c7e\u5e02",
+    "type": "\u6c7d\u8f66\u670d\u52a1;\u5145\u7535\u7ad9;\u5145\u7535\u7ad9",
+    "photos": [],
+    "typecode": "011100",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "311",
+    "adname": "\u53e4\u53bf",
+    "name": "\u767d\u5bb6\u5e84\u505c\u8f66\u533a\u7535\u52a8\u6c7d\u8f66\u5145\u7535\u7ad9",
+    "location": "111.933281,36.165650",
+    "tel": [],
+    "shopid": [],
+    "id": "B0J3452RCA"
+  },
+  {
+    "parent": [],
+    "address": "\u5317\u5e73\u9547\u653f\u5e9c\u4e1c\u5317\u4fa7",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "2.1"
+    },
+    "biz_type": [],
+    "cityname": "\u4e34\u6c7e\u5e02",
+    "type": "\u6c7d\u8f66\u670d\u52a1;\u5145\u7535\u7ad9;\u5145\u7535\u7ad9",
+    "photos": [],
+    "typecode": "011100",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u53e4\u53bf",
+    "name": "\u56fd\u5bb6\u7535\u7f51\u6c7d\u8f66\u5145\u7535\u7ad9(\u5c71\u897f\u7701\u4e34\u6c7e\u5e02\u53e4\u53bf\u5317\u5e73\u5145\u7535\u7ad9)",
+    "location": "112.074435,36.540437",
+    "tel": [],
+    "shopid": [],
+    "id": "B0HKT5G307"
+  },
+  {
+    "parent": "B0FFG7INRE",
+    "address": "\u53e4\u53bf\u7261\u4e39\u6587\u5316\u65c5\u6e38\u533a1\u53f7\u505c\u8f66\u573a",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "2.1"
+    },
+    "biz_type": [],
+    "cityname": "\u4e34\u6c7e\u5e02",
+    "type": "\u6c7d\u8f66\u670d\u52a1;\u5145\u7535\u7ad9;\u5145\u7535\u7ad9",
+    "photos": [],
+    "typecode": "011100",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "313",
+    "adname": "\u53e4\u53bf",
+    "name": "\u56fd\u5bb6\u7535\u7f51\u6c7d\u8f66\u5145\u7535\u7ad9(\u5c71\u897f\u7701\u4e34\u6c7e\u5e02\u53e4\u53bf\u7261\u4e39\u56ed\u666f\u533a1\u53f7\u505c\u8f66\u573a\u5145\u7535\u7ad9)",
+    "location": "112.038004,36.220898",
+    "tel": [],
+    "shopid": [],
+    "id": "B0HKT5DII1"
+  },
+  {
+    "parent": [],
+    "address": "G22\u9752\u5170\u9ad8\u901f\u4e0e\u767d\u5bb6\u5e84\u505c\u8f66\u533a\u4ea4\u53c9\u53e3\u897f260\u7c73",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": []
+    },
+    "biz_type": [],
+    "cityname": "\u4e34\u6c7e\u5e02",
+    "type": "\u6c7d\u8f66\u670d\u52a1;\u5145\u7535\u7ad9;\u5145\u7535\u7ad9",
+    "photos": [],
+    "typecode": "011100",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u53e4\u53bf",
+    "name": "\u661f\u661f\u7535\u8f66\u6c7d\u8f66\u5145\u7535\u7ad9",
+    "location": "111.935309,36.165093",
+    "tel": [],
+    "shopid": [],
+    "id": "B0J1672MZZ"
+  }
+]
