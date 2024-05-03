@@ -6,8 +6,8 @@ import json
 import math
 import pandas as pd
 
-# Get the lat and lon of the locations for tesla_cn with BaiduMap
-def gaode_data_obtain_api(city_adcode):
+# Get the charging stations in amap
+def gaode_charging_data_obtain_api(city_adcode):
     
     json_save_path = "./results/gaode/json/"
     api_key = "e3103237574917e1d68ae02d49af7cbf"
@@ -67,6 +67,67 @@ def adminstration_code_data(json_path):
         adcode_list.append(city_info[i]["adcode"])
     return adcode_list
 
+# Get the lat and lon of the locations for tesla_cn with BaiduMap
+def gaode_haha_data_obtain_api(city_adcode):
+    
+    json_save_path = "./results/gaode_haha/json/"
+    api_key = "e3103237574917e1d68ae02d49af7cbf"
+    
+    # haha
+    # https://lbs.amap.com/api/webservice/guide/api/search
+    # https://lbs.amap.com/api/webservice/download
+    # 050300	餐饮服务	快餐厅	快餐厅
+    # 050301	餐饮服务	快餐厅	肯德基
+    # 050302	餐饮服务	快餐厅	麦当劳
+    # 050303	餐饮服务	快餐厅	必胜客
+    # 050304	餐饮服务	快餐厅	永和豆浆
+    # 050305	餐饮服务	快餐厅	茶餐厅
+    # 050306	餐饮服务	快餐厅	大家乐
+    # 050307	餐饮服务	快餐厅	大快活
+    # 050308	餐饮服务	快餐厅	美心
+    # 050309	餐饮服务	快餐厅	吉野家
+    # 050310	餐饮服务	快餐厅	仙跡岩
+    # 050311	餐饮服务	快餐厅	呷哺呷哺
+    # 050400	餐饮服务	休闲餐饮场所	休闲餐饮场所
+    
+    # entertainment
+    # 080300	体育休闲服务	娱乐场所	娱乐场所
+    # 080301	体育休闲服务	娱乐场所	夜总会
+    # 080302	体育休闲服务	娱乐场所	KTV
+    # 080303	体育休闲服务	娱乐场所	迪厅
+    # 080304	体育休闲服务	娱乐场所	酒吧
+    # 080305	体育休闲服务	娱乐场所	游戏厅
+    # 080306	体育休闲服务	娱乐场所	棋牌室
+    # 080307	体育休闲服务	娱乐场所	博彩中心
+    # 080308	体育休闲服务	娱乐场所	网吧
+
+
+    base_website_api = "https://restapi.amap.com/v3/place/text?key={api_key}&types=050300|050301|050302|050303|050304|050305|050306|050307|050308|050309|050310|050311|050400&citylimit=True&city={city}&page={page_num}"
+    test_url = base_website_api.format(api_key=api_key, city=city_adcode, page_num=1)
+
+    test_json = requests.get(test_url).json()
+    count = int(test_json["count"])
+    print(count)
+    merged_json = test_json["pois"]
+    
+    if count <= 20:
+        pass
+    else: # More than one page
+        total_page_num = math.ceil(count/20)
+        for page in range(2, total_page_num + 1):
+            print("Page", page)
+            temp_url = base_website_api.format(api_key=api_key, city=city_adcode, page_num=page)
+            temp_json = requests.get(temp_url).json()
+            temp_pois = temp_json["pois"]
+            merged_json = merged_json + temp_pois
+            
+    merged_json_str = json.dumps(merged_json, indent=2)
+    with open(json_save_path + str(city_adcode) + ".json", "w") as json_file:
+        # Write JSON string to file
+        json_file.write(merged_json_str)
+    
+    return True
+
 if __name__ == "__main__":
 
     #base_website_no_api = "https://ditu.amap.com/service/poiInfo?query_type=TQUERY&pagesize={pagesize}&pagenum={pagenum}&zoom={zoom}&city={city}&keywords=%E5%85%85%E7%94%B5%E6%A1%A9#/"
@@ -79,7 +140,7 @@ if __name__ == "__main__":
     """
     for counter in range(2843, len(adcode_list)):
         print(counter, "/", total_adcode, "  ", adcode_list[counter])
-        gaode_data_obtain_api(adcode_list[counter])
+        gaode_charging_data_obtain_api(adcode_list[counter])
         print("___________________________________________________________")
     """
     
@@ -237,5 +298,8 @@ if __name__ == "__main__":
     gaode_df.to_excel("./results/gaode.xlsx", index=False)
     """
         
-        
+    for counter in range(0, len(adcode_list)):
+        print(counter, "/", total_adcode, "  ", adcode_list[counter])
+        gaode_haha_data_obtain_api(adcode_list[counter])
+        print("___________________________________________________________")
     
