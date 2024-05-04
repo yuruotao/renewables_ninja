@@ -135,7 +135,7 @@ def gaode_haha_data_obtain_api(city_adcode):
         for page in range(2, total_page_num + 1):
             print("Page", page)
             temp_url = base_website_api.format(api_key=api_key, city=city_adcode, page_num=page)
-            #time.sleep(1.5)
+            time.sleep(1)
             temp_json = requests.get(temp_url).json()
             temp_pois = temp_json["pois"]
             merged_json = merged_json + temp_pois
@@ -172,9 +172,6 @@ def obtain_detail_by_id(input_df_path):
     except Exception as e:
         print(e)
     
-    
-    
-
 def df_to_gdf(df, lon_name, lat_name):
     import pandas as pd
     import geopandas as gpd
@@ -412,7 +409,7 @@ if __name__ == "__main__":
     """
     #obtain_detail_by_id("./results/gaode.xlsx")
     
-    for counter in range(771, len(adcode_list)):
+    for counter in range(1428, len(adcode_list)):
         print(counter, "/", total_adcode, "  ", adcode_list[counter])
         gaode_haha_data_obtain_api(adcode_list[counter])
         print("___________________________________________________________")
