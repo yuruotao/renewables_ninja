@@ -5,10 +5,19 @@ import time
 import json
 import math
 import pandas as pd
+import geopandas as gpd
+import matplotlib.pyplot as plt
 
 # Get the charging stations in amap
 def gaode_charging_data_obtain_api(city_adcode):
-    
+    """Obtain the charging data of gaode map with api
+
+    Args:
+        city_adcode (int): the adminstration code of city
+
+    Returns:
+        Ture
+    """
     json_save_path = "./results/gaode/json/"
     api_key = "e3103237574917e1d68ae02d49af7cbf"
     
@@ -46,6 +55,7 @@ def gaode_charging_data_obtain_api(city_adcode):
     
     return True
 
+# Gather the minimal adminstration code
 def adminstration_code_data(json_path):
     """Make a list from json including the adminstration code
 
@@ -69,7 +79,14 @@ def adminstration_code_data(json_path):
 
 # Get the lat and lon of the locations for tesla_cn with BaiduMap
 def gaode_haha_data_obtain_api(city_adcode):
-    
+    """Obtain the interesting data of gaode map with api
+
+    Args:
+        city_adcode (int): the adminstration code of city
+
+    Returns:
+        Ture
+    """
     json_save_path = "./results/gaode_haha/json/"
     api_key = "e3103237574917e1d68ae02d49af7cbf"
     
@@ -128,6 +145,71 @@ def gaode_haha_data_obtain_api(city_adcode):
         json_file.write(merged_json_str)
     
     return True
+
+def df_to_gdf(df, lon_name, lat_name):
+    import pandas as pd
+    import geopandas as gpd
+    from shapely.geometry import Point
+    
+    # Construct the geometry for geodataframe
+    geometry = [Point(xy) for xy in zip(df[lon_name], df[lat_name])]
+    gdf = gpd.GeoDataFrame(df, 
+                          crs = 'EPSG:4326', 
+                          geometry = geometry)
+    return gdf
+
+def visualization(input_df_path, province):
+    charging_df = pd.read_excel(input_df_path)
+    charging_df = charging_df.dropna(subset=['lat'])
+    charging_df = charging_df.astype({"lat":float, "lon":float})
+    gdf_province = gpd.read_file("./data/shape_data/"+ province + "/" + province + ".shp")
+    gdf_china = gpd.read_file("./data/shape_data/China/chn_admbnda_adm1_ocha_2020.shp")
+    charging_gdf = df_to_gdf(charging_df, "lat", "lon")
+    
+    # Plot for china
+    plt.figure(figsize=(20, 15))
+    gdf_china.boundary.plot(linewidth=0.5, color="#adb5bd", zorder=1)
+    bounds = gdf_china.total_bounds
+    ax = plt.gca()
+    
+    # Set the aspect of the plot to be equal
+    ax.set_aspect('equal')
+    extend = 0.1
+    ax.set_xlim(bounds[0]-extend, bounds[2]+extend)
+    ax.set_ylim(bounds[1]-extend, bounds[3]+extend)
+    ax.axis('off')
+
+    num_ratio = 0.01
+    print(charging_gdf.crs)
+    for index, row in charging_gdf.iterrows():
+        circle_1 = plt.Circle((row.geometry.x, row.geometry.y), radius=1*num_ratio, color='#0077b6', alpha=0.8, fill=True)
+        ax.add_artist(circle_1)
+
+    plt.savefig("./results/charging_cn.png", dpi=900)
+    plt.close()
+    
+    # Plot for province
+    charging_province = gpd.sjoin(charging_gdf, gdf_province, how='inner', op='within')
+    plt.figure(figsize=(20, 15))
+    gdf_province.boundary.plot(linewidth=0.5, color="#adb5bd", zorder=1)
+    bounds = gdf_province.total_bounds
+    ax = plt.gca()
+    
+    # Set the aspect of the plot to be equal
+    ax.set_aspect('equal')
+    extend = 0.1
+    ax.set_xlim(bounds[0]-extend, bounds[2]+extend)
+    ax.set_ylim(bounds[1]-extend, bounds[3]+extend)
+    ax.axis('off')
+    
+    num_ratio = 0.002
+    
+    for index, row in charging_province.iterrows():
+        circle_1 = plt.Circle((row.geometry.x, row.geometry.y), radius=1*num_ratio, color='#0077b6', alpha=0.8, fill=True)
+        ax.add_artist(circle_1)
+    
+    plt.savefig("./results/charging_province.png", dpi=900)
+    plt.close()
 
 if __name__ == "__main__":
 
@@ -297,10 +379,12 @@ if __name__ == "__main__":
 
     print(gaode_df)
     gaode_df.to_excel("./results/gaode.xlsx", index=False)
+    visualization("./results/gaode.xlsx", "Guangxi")
     """
-        
+    
     for counter in range(620, len(adcode_list)):
         print(counter, "/", total_adcode, "  ", adcode_list[counter])
         gaode_haha_data_obtain_api(adcode_list[counter])
         print("___________________________________________________________")
+
     
