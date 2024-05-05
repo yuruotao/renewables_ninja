@@ -284,12 +284,116 @@ def visualization(input_df_path, province, type):
     plt.savefig("./results/" + type + "_province.png", dpi=900)
     plt.close()
 
+def entertain_visualization(input_df_path, province, type):
+    charging_df = pd.read_excel(input_df_path)
+    charging_df = charging_df.dropna(subset=['lat'])
+    charging_df = charging_df.astype({"lat":float, "lon":float})
+    gdf_province = gpd.read_file("./data/shape_data/"+ province + "/" + province + ".shp")
+    gdf_china = gpd.read_file("./data/shape_data/China/chn_admbnda_adm1_ocha_2020.shp")
+    charging_gdf = df_to_gdf(charging_df, "lon", "lat")
+    
+    # Plot for china
+    plt.figure(figsize=(20, 15))
+    gdf_china.boundary.plot(linewidth=0.5, color="#adb5bd", zorder=1)
+    bounds = gdf_china.total_bounds
+    ax = plt.gca()
+    
+    # Set the aspect of the plot to be equal
+    ax.set_aspect('equal')
+    extend = 0
+    ax.set_xlim(bounds[0]-extend, bounds[2]+extend)
+    ax.set_ylim(bounds[1]-extend, bounds[3]+extend)
+    ax.axis('off')
+
+    num_ratio = 0.01
+
+    for index, row in charging_gdf.iterrows():
+        if row["typecode"] == "080301": #夜总会
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#001427', linewidths=0, edgecolor=None, alpha=1)
+        elif row["typecode"] == "080302": #KTV
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#708d81', linewidths=0, edgecolor=None, alpha=1)
+        elif row["typecode"] == "080303": #迪厅
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#f4d58d', linewidths=0, edgecolor=None, alpha=1)
+        elif row["typecode"] == "080304": #酒吧
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#bf0603', linewidths=0, edgecolor=None, alpha=1)
+        else:
+            pass
+    
+    # Define custom legend handles and labels
+    legend_handles = [
+        Patch(color='#001427', label='Night Club'),
+        Patch(color='#708d81', label='KTV'),
+        Patch(color='#f4d58d', label='Disco'),
+        Patch(color='#bf0603', label='Bar')
+    ]
+    
+    # Add legend to the plot
+    legend = plt.legend(handles=legend_handles, loc='upper left', frameon=False, 
+                        bbox_to_anchor=(0, 1.02, 1, 0.2), mode="expand", borderaxespad=0, ncol=4)
+    
+    for text in legend.get_texts():
+        text.set_fontfamily('Times New Roman')
+
+    #plt.tight_layout()
+    plt.savefig("./results/" + type + "_cn.png", dpi=900)
+    plt.close()
+    
+    # Plot for province
+    charging_province = gpd.sjoin(charging_gdf, gdf_province, how='inner', op='within')
+    plt.figure(figsize=(20, 15))
+    gdf_province.boundary.plot(linewidth=0.5, color="#adb5bd", zorder=1)
+    bounds = gdf_province.total_bounds
+    ax = plt.gca()
+    
+    # Set the aspect of the plot to be equal
+    ax.set_aspect('equal')
+    extend = 0
+    ax.set_xlim(bounds[0]-extend, bounds[2]+extend)
+    ax.set_ylim(bounds[1]-extend, bounds[3]+extend)
+    ax.axis('off')
+    
+    num_ratio = 0.02
+    
+    for index, row in charging_province.iterrows():
+        if row["typecode"] == "080301": #夜总会
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#001427', linewidths=0, edgecolor=None, alpha=1)
+        elif row["typecode"] == "080302": #KTV
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#708d81', linewidths=0, edgecolor=None, alpha=1)
+        elif row["typecode"] == "080303": #迪厅
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#f4d58d', linewidths=0, edgecolor=None, alpha=1)
+        elif row["typecode"] == "080304": #酒吧
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#bf0603', linewidths=0, edgecolor=None, alpha=1)
+        else:
+            pass
+    
+    # Define custom legend handles and labels
+    legend_handles = [
+        Patch(color='#001427', label='Night Club'),
+        Patch(color='#708d81', label='KTV'),
+        Patch(color='#f4d58d', label='Disco'),
+        Patch(color='#bf0603', label='Bar')
+        
+    ]
+
+    # Add legend to the plot
+    legend = plt.legend(handles=legend_handles, loc='upper left', frameon=False, 
+                        bbox_to_anchor=(0, 1.02, 1, 0.2), mode="expand", borderaxespad=0, ncol=4)
+    
+    for text in legend.get_texts():
+        text.set_fontfamily('Times New Roman')
+    
+    #plt.tight_layout()
+    plt.savefig("./results/" + type + "_province.png", dpi=900)
+    plt.close()
+
+
 if __name__ == "__main__":
 
     #base_website_no_api = "https://ditu.amap.com/service/poiInfo?query_type=TQUERY&pagesize={pagesize}&pagenum={pagenum}&zoom={zoom}&city={city}&keywords=%E5%85%85%E7%94%B5%E6%A1%A9#/"
 
     json_save_path = "./results/gaode/json/"
     haha_json_save_path = "./results/gaode_haha/json/"
+    entertain_json_save_path = "./results/gaode_entertain/json/"
     adcode_list = adminstration_code_data("./data/china_city.json")
     total_adcode = len(adcode_list)
     
@@ -459,12 +563,12 @@ if __name__ == "__main__":
     
     
     # Get haha data
-
+    """
     for counter in range(1724, len(adcode_list)):
         print(counter, "/", total_adcode, "  ", adcode_list[counter])
         gaode_haha_data_obtain_api(adcode_list[counter])
         print("___________________________________________________________")
-
+    """
     
     # Json data aggregate for haha
     """
@@ -648,3 +752,172 @@ if __name__ == "__main__":
     """
     
     #visualization("./results/haha.xlsx", "Guangxi", "food")
+    
+    # Json data aggregate for entertain
+    """
+    haha_df = pd.DataFrame()
+    parent_list = []
+    address_list = []
+    pname_list = []
+    
+    cost_list = []
+    rating_list = []
+    
+    cityname_list = []
+    type_list = []
+    typecode_list = []
+    shopinfo_list = []
+    adname_list = []
+    name_list = []
+    lat_list = []
+    lon_list = []
+    tel_list = []
+    shopid_list = []
+    id_list = []
+    
+    # Merge the json files into dataframe
+    for counter in range(total_adcode):
+        print(counter, "/", total_adcode)
+        temp_json_path = entertain_json_save_path + adcode_list[counter] + ".json"
+        with open(temp_json_path, 'r') as f:
+            temp_json_data = json.load(f)
+        
+        for entry in temp_json_data:
+            
+            if len(entry) != 0:
+                # Parent
+                parent = entry.get("parent")
+                if isinstance(parent, str):
+                    parent_list.append(parent)
+                else:
+                    parent_list.append("")
+
+                # Address
+                address = entry.get("address")
+                if isinstance(address, str):
+                    address_list.append(address)
+                else:
+                    address_list.append("")
+                
+                # pname
+                pname = entry.get("pname")
+                if isinstance(pname, str):
+                    pname_list.append(pname)
+                else:
+                    pname_list.append("")
+                
+                # cost, rating
+                biz_ext = entry.get("biz_ext")
+                
+                cost = biz_ext.get("cost")
+                if isinstance(cost, str):
+                    cost_list.append(cost)
+                else:
+                    cost_list.append("")
+                    
+                rating = biz_ext.get("rating")
+                if isinstance(rating, str):
+                    rating_list.append(rating)
+                else:
+                    rating_list.append("")
+                    
+
+                # cityname
+                cityname = entry.get("cityname")
+                if isinstance(cityname, str):
+                    cityname_list.append(cityname)
+                else:
+                    cityname_list.append("")
+                
+                # type
+                type = entry.get("type")
+                if isinstance(type, str):
+                    type_list.append(type)
+                else:
+                    type_list.append("")
+                
+                # typecode
+                typecode = entry.get("typecode")
+                if isinstance(typecode, str):
+                    typecode_list.append(typecode)
+                else:
+                    typecode_list.append("")
+                    
+                # shopinfo
+                shopinfo = entry.get("shopinfo")
+                if isinstance(shopinfo, str):
+                    shopinfo_list.append(shopinfo)
+                else:
+                    shopinfo_list.append("")
+                
+                # adname
+                adname = entry.get("adname")
+                if isinstance(adname, str):
+                    adname_list.append(adname)
+                else:
+                    adname_list.append("")
+                
+                # name
+                name = entry.get("name")
+                if isinstance(name, str):
+                    name_list.append(name)
+                else:
+                    name_list.append("")
+                    
+                # lat lon
+                location = entry.get("location")
+                if isinstance(location, str):
+                    lon, lat = location.split(",")
+                    lat_list.append(float(lat))
+                    lon_list.append(float(lon))
+                else:
+                    lat_list.append("")
+                    lon_list.append("")
+                    
+                # tel
+                tel = entry.get("tel")
+                if isinstance(tel, str):
+                    tel_list.append(tel)
+                else:
+                    tel_list.append("")
+                    
+                # shopid
+                shopid = entry.get("shopid")
+                if isinstance(shopid, str):
+                    shopid_list.append(shopid)
+                else:
+                    shopid_list.append("")
+                    
+                # id
+                id = entry.get("id")
+                if isinstance(id, str):
+                    id_list.append(id)
+                else:
+                    id_list.append("")
+                
+            else:
+                pass
+                
+    haha_df["parent"] = parent_list
+    haha_df["id"] = id_list
+    haha_df["name"] = name_list
+    haha_df["adname"] = adname_list
+    haha_df["pname"] = pname_list
+    haha_df["address"] = address_list
+    haha_df["cityname"] = cityname_list
+    haha_df["type"] = type_list
+    haha_df["typecode"] = typecode_list
+    haha_df["shopinfo"] = shopinfo_list
+    haha_df["shopid"] = shopid_list
+    haha_df["tel"] = tel_list
+    haha_df["rating"] = rating_list
+    haha_df["lat"] = lat_list
+    haha_df["lon"] = lon_list
+    haha_df["cost"] = cost_list
+
+    print(haha_df)
+    haha_df.to_excel("./results/entertain.xlsx", index=False)
+    """
+    
+    
+    entertain_visualization("./results/entertain.xlsx", "Guangxi", "entertain")
