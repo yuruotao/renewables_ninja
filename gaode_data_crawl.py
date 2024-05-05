@@ -8,6 +8,11 @@ import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
 from DrissionPage import ChromiumPage
+from matplotlib.patches import Patch
+import seaborn as sns
+
+sns.set_style({'font.family':'serif', 'font.serif':'Times New Roman'})
+sns.set_theme(style="white")
 
 # Get the charging stations in amap
 def gaode_charging_data_obtain_api(city_adcode):
@@ -135,7 +140,6 @@ def gaode_haha_data_obtain_api(city_adcode):
         for page in range(2, total_page_num + 1):
             print("Page", page)
             temp_url = base_website_api.format(api_key=api_key, city=city_adcode, page_num=page)
-            #time.sleep(1)
             temp_json = requests.get(temp_url).json()
             temp_pois = temp_json["pois"]
             merged_json = merged_json + temp_pois
@@ -184,13 +188,13 @@ def df_to_gdf(df, lon_name, lat_name):
                           geometry = geometry)
     return gdf
 
-def visualization(input_df_path, province):
+def visualization(input_df_path, province, type):
     charging_df = pd.read_excel(input_df_path)
     charging_df = charging_df.dropna(subset=['lat'])
     charging_df = charging_df.astype({"lat":float, "lon":float})
     gdf_province = gpd.read_file("./data/shape_data/"+ province + "/" + province + ".shp")
     gdf_china = gpd.read_file("./data/shape_data/China/chn_admbnda_adm1_ocha_2020.shp")
-    charging_gdf = df_to_gdf(charging_df, "lat", "lon")
+    charging_gdf = df_to_gdf(charging_df, "lon", "lat")
     
     # Plot for china
     plt.figure(figsize=(20, 15))
@@ -200,18 +204,39 @@ def visualization(input_df_path, province):
     
     # Set the aspect of the plot to be equal
     ax.set_aspect('equal')
-    extend = 0.1
+    extend = 0
     ax.set_xlim(bounds[0]-extend, bounds[2]+extend)
     ax.set_ylim(bounds[1]-extend, bounds[3]+extend)
     ax.axis('off')
 
-    num_ratio = 0.01
-    print(charging_gdf.crs)
-    for index, row in charging_gdf.iterrows():
-        circle_1 = plt.Circle((row.geometry.x, row.geometry.y), radius=1*num_ratio, color='#0077b6', alpha=0.8, fill=True)
-        ax.add_artist(circle_1)
+    num_ratio = 0.005
 
-    plt.savefig("./results/charging_cn.png", dpi=900)
+    for index, row in charging_gdf.iterrows():
+        if row["typecode"] == "050301": #KFC
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#c81d25', linewidths=0, edgecolor=None, alpha=1)
+        elif row["typecode"] == "050302": #M
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#fca311', linewidths=0, edgecolor=None, alpha=1)
+        elif "汉堡王" in row["name"]: #Burgerking
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#540b0e', linewidths=0, edgecolor=None, alpha=1)
+        else:
+            pass
+    
+    # Define custom legend handles and labels
+    legend_handles = [
+        Patch(color='#c81d25', label='KFC'),
+        Patch(color='#fca311', label='McDonalds'),
+        Patch(color='#540b0e', label='Burger King')
+    ]
+
+    # Add legend to the plot
+    legend = plt.legend(handles=legend_handles, loc='upper left', frameon=False, 
+                        bbox_to_anchor=(0, 1.02, 1, 0.2), mode="expand", borderaxespad=0, ncol=3)
+    
+    for text in legend.get_texts():
+        text.set_fontfamily('Times New Roman')
+
+    #plt.tight_layout()
+    plt.savefig("./results/" + type + "_cn.png", dpi=900)
     plt.close()
     
     # Plot for province
@@ -223,18 +248,39 @@ def visualization(input_df_path, province):
     
     # Set the aspect of the plot to be equal
     ax.set_aspect('equal')
-    extend = 0.1
+    extend = 0
     ax.set_xlim(bounds[0]-extend, bounds[2]+extend)
     ax.set_ylim(bounds[1]-extend, bounds[3]+extend)
     ax.axis('off')
     
-    num_ratio = 0.002
+    num_ratio = 0.02
     
     for index, row in charging_province.iterrows():
-        circle_1 = plt.Circle((row.geometry.x, row.geometry.y), radius=1*num_ratio, color='#0077b6', alpha=0.8, fill=True)
-        ax.add_artist(circle_1)
+        if row["typecode"] == "050301": #KFC
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#c81d25', edgecolor=None, alpha=1)
+        elif row["typecode"] == "050302": #M
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#fca311', edgecolor=None, alpha=1)
+        elif "汉堡王" in row["name"]: #Burgerking
+            ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#540b0e', edgecolor=None, alpha=1)
+        else:
+            pass
     
-    plt.savefig("./results/charging_province.png", dpi=900)
+    # Define custom legend handles and labels
+    legend_handles = [
+        Patch(color='#c81d25', label='KFC'),
+        Patch(color='#fca311', label='McDonalds'),
+        Patch(color='#540b0e', label='Burger King')
+    ]
+
+    # Add legend to the plot
+    legend = plt.legend(handles=legend_handles, loc='upper left', frameon=False, 
+                        bbox_to_anchor=(0, 1.02, 1, 0.2), mode="expand", borderaxespad=0, ncol=3)
+    
+    for text in legend.get_texts():
+        text.set_fontfamily('Times New Roman')
+    
+    #plt.tight_layout()
+    plt.savefig("./results/" + type + "_province.png", dpi=900)
     plt.close()
 
 if __name__ == "__main__":
@@ -242,6 +288,7 @@ if __name__ == "__main__":
     #base_website_no_api = "https://ditu.amap.com/service/poiInfo?query_type=TQUERY&pagesize={pagesize}&pagenum={pagenum}&zoom={zoom}&city={city}&keywords=%E5%85%85%E7%94%B5%E6%A1%A9#/"
 
     json_save_path = "./results/gaode/json/"
+    haha_json_save_path = "./results/gaode_haha/json/"
     adcode_list = adminstration_code_data("./data/china_city.json")
     total_adcode = len(adcode_list)
     
@@ -409,9 +456,194 @@ if __name__ == "__main__":
     """
     #obtain_detail_by_id("./results/gaode.xlsx")
     
+    
+    # Get haha data
+    """
     for counter in range(2146, len(adcode_list)):
         print(counter, "/", total_adcode, "  ", adcode_list[counter])
         gaode_haha_data_obtain_api(adcode_list[counter])
         print("___________________________________________________________")
-
+    """
     
+    # Json data aggregate for haha
+    """
+    haha_df = pd.DataFrame()
+    parent_list = []
+    address_list = []
+    pname_list = []
+    
+    cost_list = []
+    opentime2_list = []
+    rating_list = []
+    open_time_list = []
+    
+    cityname_list = []
+    type_list = []
+    typecode_list = []
+    shopinfo_list = []
+    adname_list = []
+    name_list = []
+    lat_list = []
+    lon_list = []
+    tel_list = []
+    shopid_list = []
+    id_list = []
+    
+    # Merge the json files into dataframe
+    for counter in range(total_adcode):
+        print(counter, "/", total_adcode)
+        temp_json_path = haha_json_save_path + adcode_list[counter] + ".json"
+        with open(temp_json_path, 'r') as f:
+            temp_json_data = json.load(f)
+        
+        for entry in temp_json_data:
+            
+            if len(entry) != 0:
+                # Parent
+                parent = entry.get("parent")
+                if isinstance(parent, str):
+                    parent_list.append(parent)
+                else:
+                    parent_list.append("")
+
+                # Address
+                address = entry.get("address")
+                if isinstance(address, str):
+                    address_list.append(address)
+                else:
+                    address_list.append("")
+                
+                # pname
+                pname = entry.get("pname")
+                if isinstance(pname, str):
+                    pname_list.append(pname)
+                else:
+                    pname_list.append("")
+                
+                # cost, rating
+                biz_ext = entry.get("biz_ext")
+                
+                cost = biz_ext.get("cost")
+                if isinstance(cost, str):
+                    cost_list.append(cost)
+                else:
+                    cost_list.append("")
+                    
+                rating = biz_ext.get("rating")
+                if isinstance(rating, str):
+                    rating_list.append(rating)
+                else:
+                    rating_list.append("")
+                    
+                open_time = biz_ext.get("open_time")
+                if isinstance(open_time, str):
+                    open_time_list.append(open_time)
+                else:
+                    open_time_list.append("")
+
+                opentime2 = biz_ext.get("opentime2")
+                if isinstance(opentime2, str):
+                    opentime2_list.append(opentime2)
+                else:
+                    opentime2_list.append("")
+
+                # cityname
+                cityname = entry.get("cityname")
+                if isinstance(cityname, str):
+                    cityname_list.append(cityname)
+                else:
+                    cityname_list.append("")
+                
+                # type
+                type = entry.get("type")
+                if isinstance(type, str):
+                    type_list.append(type)
+                else:
+                    type_list.append("")
+                
+                # typecode
+                typecode = entry.get("typecode")
+                if isinstance(typecode, str):
+                    typecode_list.append(typecode)
+                else:
+                    typecode_list.append("")
+                    
+                # shopinfo
+                shopinfo = entry.get("shopinfo")
+                if isinstance(shopinfo, str):
+                    shopinfo_list.append(shopinfo)
+                else:
+                    shopinfo_list.append("")
+                
+                # adname
+                adname = entry.get("adname")
+                if isinstance(adname, str):
+                    adname_list.append(adname)
+                else:
+                    adname_list.append("")
+                
+                # name
+                name = entry.get("name")
+                if isinstance(name, str):
+                    name_list.append(name)
+                else:
+                    name_list.append("")
+                    
+                # lat lon
+                location = entry.get("location")
+                if isinstance(location, str):
+                    lon, lat = location.split(",")
+                    lat_list.append(float(lat))
+                    lon_list.append(float(lon))
+                else:
+                    lat_list.append("")
+                    lon_list.append("")
+                    
+                # tel
+                tel = entry.get("tel")
+                if isinstance(tel, str):
+                    tel_list.append(tel)
+                else:
+                    tel_list.append("")
+                    
+                # shopid
+                shopid = entry.get("shopid")
+                if isinstance(shopid, str):
+                    shopid_list.append(shopid)
+                else:
+                    shopid_list.append("")
+                    
+                # id
+                id = entry.get("id")
+                if isinstance(id, str):
+                    id_list.append(id)
+                else:
+                    id_list.append("")
+                
+            else:
+                pass
+                
+    haha_df["parent"] = parent_list
+    haha_df["id"] = id_list
+    haha_df["name"] = name_list
+    haha_df["adname"] = adname_list
+    haha_df["pname"] = pname_list
+    haha_df["address"] = address_list
+    haha_df["cityname"] = cityname_list
+    haha_df["type"] = type_list
+    haha_df["typecode"] = typecode_list
+    haha_df["shopinfo"] = shopinfo_list
+    haha_df["shopid"] = shopid_list
+    haha_df["tel"] = tel_list
+    haha_df["rating"] = rating_list
+    haha_df["lat"] = lat_list
+    haha_df["lon"] = lon_list
+    haha_df["cost"] = cost_list
+    haha_df["opentime2"] = opentime2_list
+    haha_df["open_time"] = open_time_list
+
+    print(haha_df)
+    haha_df.to_excel("./results/haha.xlsx", index=False)
+    """
+    
+    visualization("./results/haha.xlsx", "Guangxi", "food")
