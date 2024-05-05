@@ -1,0 +1,104 @@
+[
+  {
+    "parent": [],
+    "address": "\u5357\u5927\u8857\u6e38\u4eba\u5982\u4eb2\u5927\u9152\u5e97\u65c1",
+    "distance": [],
+    "pname": "\u9752\u6d77\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "09:30-22:30",
+      "rating": "3.9",
+      "open_time": "09:30-22:30",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u679c\u6d1b\u85cf\u65cf\u81ea\u6cbb\u5dde",
+    "type": "\u9910\u996e\u670d\u52a1;\u5feb\u9910\u5385;\u5feb\u9910\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "https://aos-comment.amap.com/B0GR6NXW3B/headerImg/2f8793975cf84f39324e63fba3f8ac10_2048_2048_80.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/d65f8180099bdd6d4d57854b761c6ac7.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/cfd1a5f16db44ab1b9345aa4da5205a8"
+      }
+    ],
+    "typecode": "050300",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u739b\u591a\u53bf",
+    "name": "\u4f0a\u9686\u8001\u7092\u70ae\u4ed7",
+    "location": "98.208886,34.908914",
+    "tel": "18909752423",
+    "shopid": [],
+    "id": "B0GR6NXW3B"
+  },
+  {
+    "parent": [],
+    "address": "\u739b\u67e5\u7406\u9547\u5357\u5927\u8857\u6b63\u65b0\u9e21\u6392",
+    "distance": [],
+    "pname": "\u9752\u6d77\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "12:00-24:00",
+      "rating": "3.6",
+      "open_time": "12:00-24:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u679c\u6d1b\u85cf\u65cf\u81ea\u6cbb\u5dde",
+    "type": "\u9910\u996e\u670d\u52a1;\u5feb\u9910\u5385;\u5feb\u9910\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/2dc0b1f922d7d0649bf748e11ae1dda4"
+      }
+    ],
+    "typecode": "050300",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u739b\u591a\u53bf",
+    "name": "\u6b63\u65b0\u9e21\u6392(\u739b\u591a\u5e97)",
+    "location": "98.211320,34.914068",
+    "tel": "15297026579",
+    "shopid": [],
+    "id": "B0JRUAYTO9"
+  },
+  {
+    "parent": [],
+    "address": "\u739b\u62c9\u9a7f\u8def\u4e0e\u806a\u5b8f\u8def\u4ea4\u53c9\u53e3\u4e1c\u531760\u7c73",
+    "distance": [],
+    "pname": "\u9752\u6d77\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "0.7",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u679c\u6d1b\u85cf\u65cf\u81ea\u6cbb\u5dde",
+    "type": "\u9910\u996e\u670d\u52a1;\u5feb\u9910\u5385;\u5feb\u9910\u5385",
+    "photos": [],
+    "typecode": "050300",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u739b\u591a\u53bf",
+    "name": "\u9999\u60e0\u5c0f\u5403",
+    "location": "98.211969,34.911065",
+    "tel": [],
+    "shopid": [],
+    "id": "B0FFKYLXWZ"
+  }
+]
