@@ -1,0 +1,607 @@
+[
+  {
+    "parent": [],
+    "address": "\u67f3\u6797\u9547248\u7701\u9053\u5317\u5927\u8857\u9f0e\u76db\u56ed1\u53f7\u697c3\u5c42",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "4.2"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;KTV",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/9143a81239d8f696aa15a0633d389852"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/b18421ebe96e6f62cf0e40a36af7a6e1"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/40b80c837eac5cd489239bbcf0a01e42"
+      }
+    ],
+    "typecode": "080302",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u4e50\u5de2\u4e3b\u9898KTV",
+    "location": "110.904626,37.444183",
+    "tel": "0358-4050888",
+    "shopid": [],
+    "id": "B0FFK6KCUT"
+  },
+  {
+    "parent": "B0FFM7XSUB",
+    "address": "\u7cbe\u54c1\u8857",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "4.4"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;KTV",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/115141eda0eb796e3c49d691c9aae3db.jpg"
+      }
+    ],
+    "typecode": "080302",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "324",
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u597d\u5fc3\u60c5KTV(\u5efa\u8bbe\u8def\u5e97)",
+    "location": "110.899832,37.432570",
+    "tel": [],
+    "shopid": [],
+    "id": "B0G1FUNM00"
+  },
+  {
+    "parent": "B0FFM7XSUB",
+    "address": "\u5341\u516b\u7c73\u8857\u7cbe\u54c1\u8857\u5f80\u5357\u7b2c\u4e8c\u5df7(\u539f\u65b0\u5929\u5730KTV)",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "4.1"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;KTV",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/68f40dcb9d434b95f063ca2474af0cba"
+      }
+    ],
+    "typecode": "080302",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "324",
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u7b2c7\u611f(\u7cbe\u54c1\u8857\u5e97)",
+    "location": "110.898319,37.431985",
+    "tel": [],
+    "shopid": [],
+    "id": "B0FFI6O4PH"
+  },
+  {
+    "parent": "B0FFH5F298",
+    "address": "\u9f99\u57ce\u8d2d\u7269\u4e2d\u5fc3\u897f\u5317\u95e8\u897f\u535780\u7c73",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "3.9"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;KTV",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/eae3d28dba3607113b97d49b38b7dca5"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/f4da0ae9bbba72b35f06c31ef68020b5"
+      }
+    ],
+    "typecode": "080302",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u5927\u94ed\u946b(\u9f99\u57ce\u8d2d\u7269\u4e2d\u5fc3\u5e97)",
+    "location": "110.909850,37.438595",
+    "tel": "0358-4041999",
+    "shopid": [],
+    "id": "B016601351"
+  },
+  {
+    "parent": [],
+    "address": "\u5341\u516b\u7c73\u8857\u8d3a\u5170\u658b\u5bf9\u9762\u5730\u4e0b\u5ba4",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "4.4"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;\u9152\u5427",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/5b3b25c4b4f9bc6047f5699850c9cc28"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/62795c832a151226484d28fb501d78d9"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/c08c6b0d676bc7343b904e8c26a1365b"
+      }
+    ],
+    "typecode": "080304",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u8fbe\u5c14\u6587\u9152\u9986",
+    "location": "110.898436,37.431335",
+    "tel": "18535835500",
+    "shopid": [],
+    "id": "B0JDKR9V8T"
+  },
+  {
+    "parent": [],
+    "address": "\u9752\u9f99\u5927\u8857\u9f99\u57ce\u5927\u9152\u5e97\u4e00\u697c(\u8fd1\u9752\u9f99\u8d2d\u7269\u5e7f\u573a)",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "4.1"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;KTV",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/5a3a70c34f33a82b2cea50c441d6e46e"
+      }
+    ],
+    "typecode": "080302",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u9f99\u57ceKTV(\u67f3\u6797\u5e97)",
+    "location": "110.910707,37.439505",
+    "tel": [],
+    "shopid": [],
+    "id": "B0FFH68VQH"
+  },
+  {
+    "parent": "B01660NP6V",
+    "address": "\u8d3a\u660c\u5927\u8857\u9633\u5149\u65f6\u5c1a\u8d2d\u7269\u4e2d\u5fc3\u4e00\u697c",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "3.9"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;\u9152\u5427",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/125dd43af08871b35f8d7703ca56806c"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/deb74701567b8063241d3501c0628dc0"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/7781b361190cf7fd6735e4b4c9f0a1a5"
+      }
+    ],
+    "typecode": "080304",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "M\u9152\u5427(\u9633\u5149\u65f6\u5c1a\u00b7\u65b0\u5929\u5730\u5e97)",
+    "location": "110.901512,37.435459",
+    "tel": [],
+    "shopid": [],
+    "id": "B0H3A7CLKT"
+  },
+  {
+    "parent": [],
+    "address": "\u67f3\u6797\u9547\u5357\u95e8\u5916",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "4.3"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;\u9152\u5427",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/9bdf4bc74980c7839f23d4b8bcff8792"
+      }
+    ],
+    "typecode": "080304",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u670b\u53cb\u5708\u9152\u5427",
+    "location": "110.896731,37.431791",
+    "tel": [],
+    "shopid": [],
+    "id": "B0FFIBDHH8"
+  },
+  {
+    "parent": [],
+    "address": "\u5bcc\u6d77\u80fd\u6e90\u664b\u946b\u7279\u8bb8\u52a0\u6cb9\u7ad9\u4e1c\u5357\u4fa790\u7c73",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "4.3"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;KTV",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/85b0fff160a421b478f0fe9c524c0584"
+      }
+    ],
+    "typecode": "080302",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u53e4\u9547KTV\u91cf\u8d29\u5f0f",
+    "location": "110.853327,37.413830",
+    "tel": "15834048141",
+    "shopid": [],
+    "id": "B0G1TRVETG"
+  },
+  {
+    "parent": [],
+    "address": "\u6e05\u6cb3\u897f\u8def40\u53f7",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "4.3"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;KTV",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e9c910393eb64b0643f78c383dc731f0"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/73b833eb291f7b03e6fae244668b0774"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/7b696ee32261ca519fe540549a45141d"
+      }
+    ],
+    "typecode": "080302",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u7687\u94bbKTV\u97f3\u4e50\u4f1a\u6240(\u77f3\u5bb6\u6c9f\u5357\u8def\u5e97)",
+    "location": "110.903110,37.431563",
+    "tel": [],
+    "shopid": [],
+    "id": "B0FFGJ1ZD9"
+  },
+  {
+    "parent": [],
+    "address": "\u5341\u516b\u7c73\u8857\u5feb\u901f\u8def",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "4.0"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;\u9152\u5427",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/447a29964a0ecb4626fa81b19a65630a"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6c107dd2e990bf1b7cd904e76cb384c8"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/262d0d4034a9fb642271bf7a2a6a6221"
+      }
+    ],
+    "typecode": "080304",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u94dc\u9523\u6e7e\u4ff1\u4e50\u90e8",
+    "location": "110.899024,37.432119",
+    "tel": "17635871464",
+    "shopid": [],
+    "id": "B0JG479FGI"
+  },
+  {
+    "parent": [],
+    "address": "\u5341\u516b\u7c73\u8857\u5357\u576a\u4e1c\u4e09\u5df728\u53f7\u9644\u8fd1\u5c0f\u9152\u9986\u63a8\u8350\u6c1b\u56f4\u597d\u5c0f\u9152\u9986",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "4.0"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;\u9152\u5427",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/8906b8c902a567b843ad6a63569a23d8.jpg"
+      }
+    ],
+    "typecode": "080304",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u6574\u70b9\u7cbe\u917f\u5c0f\u9152\u9986",
+    "location": "110.899525,37.431701",
+    "tel": "15034260955",
+    "shopid": [],
+    "id": "B0J32H8UU0"
+  },
+  {
+    "parent": [],
+    "address": "\u67f3\u6797\u9547\u524d\u6bdb\u5bb6\u5e8435\u53f7",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "4.2"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;KTV",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/83c33540bccc28cf3de821c1b1ac65a6"
+      }
+    ],
+    "typecode": "080302",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u946b\u805a\u4f1aKTV",
+    "location": "110.898921,37.455722",
+    "tel": [],
+    "shopid": [],
+    "id": "B0JGL7IPA6"
+  },
+  {
+    "parent": [],
+    "address": "\u67f3\u6797\u9547\u5341\u516b\u7c73\u8857",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "3.8"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;KTV",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/0cadf26a3b519f87b25940d7bd4eec0c"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/ce0b8cd2a5a006539093bcf033fb2cbe"
+      }
+    ],
+    "typecode": "080302",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u9633\u5149\u76db\u4e16KTV\u4ff1\u4e50\u90e8",
+    "location": "110.901632,37.435626",
+    "tel": [],
+    "shopid": [],
+    "id": "B01660NP6Y"
+  },
+  {
+    "parent": [],
+    "address": "\u5341\u516b\u7c73\u8857\u7cbe\u54c1\u8857\u4e2d\u6bb5",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "4.2"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;\u9152\u5427",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/116a8c2cef8708968a2a2182b587ffc0"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/27656caff330934269d2129145aab49f"
+      }
+    ],
+    "typecode": "080304",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u9152\u70b9\u4f34\u97f3\u4e50\u5427",
+    "location": "110.898131,37.432439",
+    "tel": [],
+    "shopid": [],
+    "id": "B0I05A02H1"
+  },
+  {
+    "parent": [],
+    "address": "\u5317\u5927\u8857\u4e0e\u535a\u5b66\u8def\u4ea4\u53c9\u53e3\u5357380\u7c73",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "3.6"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;KTV",
+    "photos": [],
+    "typecode": "080302",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u4e50\u5de2\u4e3b\u9898KTV",
+    "location": "110.900048,37.450438",
+    "tel": [],
+    "shopid": [],
+    "id": "B0K6H5F8CS"
+  },
+  {
+    "parent": [],
+    "address": "\u6e05\u6cb3\u5317\u8def\u4e0e\u5317\u5927\u8857\u4ea4\u53c9\u53e3\u4e1c\u5317220\u7c73",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "3.4"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;KTV",
+    "photos": [],
+    "typecode": "080302",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u946b\u98de\u5927\u9152\u5e97KTV",
+    "location": "110.907142,37.444436",
+    "tel": [],
+    "shopid": [],
+    "id": "B0J0F9U0RX"
+  },
+  {
+    "parent": [],
+    "address": "\u5357\u576a\u4e8c\u5df7\u4e0e\u5357\u576a\u8def\u4ea4\u53c9\u53e3\u4e1c\u531740\u7c73",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "rating": "3.2"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;KTV",
+    "photos": [],
+    "typecode": "080302",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "\u7cd6\u679c\u97f3\u4e50\u5427",
+    "location": "110.898002,37.432267",
+    "tel": [],
+    "shopid": [],
+    "id": "B0JBT1DIGF"
+  },
+  {
+    "parent": [],
+    "address": "\u9504\u6c9f\u5927\u8857\u4e0e\u6e05\u6cb3\u5357\u8def\u4ea4\u53c9\u53e3\u4e1c\u5357120\u7c73",
+    "distance": [],
+    "pname": "\u5c71\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "2.9",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": [],
+    "cityname": "\u5415\u6881\u5e02",
+    "type": "\u4f53\u80b2\u4f11\u95f2\u670d\u52a1;\u5a31\u4e50\u573a\u6240;\u9152\u5427|\u9910\u996e\u670d\u52a1;\u4e2d\u9910\u5385;\u4e2d\u9910\u5385",
+    "photos": [],
+    "typecode": "080304|050100",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u67f3\u6797\u53bf",
+    "name": "YJ\u97f3\u4e50\u9910\u5427",
+    "location": "110.907967,37.430733",
+    "tel": [],
+    "shopid": [],
+    "id": "B0KBFHRKYP"
+  }
+]

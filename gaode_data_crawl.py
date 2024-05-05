@@ -93,7 +93,8 @@ def gaode_haha_data_obtain_api(city_adcode):
     Returns:
         Ture
     """
-    json_save_path = "./results/gaode_haha/json/"
+    #json_save_path = "./results/gaode_haha/json/"
+    json_save_path = "./results/gaode_entertain/json/"
     api_key = "e3103237574917e1d68ae02d49af7cbf"
     
     # haha
@@ -124,8 +125,8 @@ def gaode_haha_data_obtain_api(city_adcode):
     # 080307	体育休闲服务	娱乐场所	博彩中心
     # 080308	体育休闲服务	娱乐场所	网吧
 
-
-    base_website_api = "https://restapi.amap.com/v3/place/text?key={api_key}&types=050300|050301|050302|050303|050304|050305|050306|050307|050308|050309|050310|050311|050400&citylimit=True&city={city}&page={page_num}"
+    #base_website_api = "https://restapi.amap.com/v3/place/text?key={api_key}&types=050300|050301|050302|050303|050304|050305|050306|050307|050308|050309|050310|050311|050400&citylimit=True&city={city}&page={page_num}"
+    base_website_api = "https://restapi.amap.com/v3/place/text?key={api_key}&types=080301|080302|080303|080304&citylimit=True&city={city}&page={page_num}"
     test_url = base_website_api.format(api_key=api_key, city=city_adcode, page_num=1)
 
     test_json = requests.get(test_url).json()
@@ -458,12 +459,12 @@ if __name__ == "__main__":
     
     
     # Get haha data
-    """
-    for counter in range(2146, len(adcode_list)):
+
+    for counter in range(1724, len(adcode_list)):
         print(counter, "/", total_adcode, "  ", adcode_list[counter])
         gaode_haha_data_obtain_api(adcode_list[counter])
         print("___________________________________________________________")
-    """
+
     
     # Json data aggregate for haha
     """
@@ -646,4 +647,4 @@ if __name__ == "__main__":
     haha_df.to_excel("./results/haha.xlsx", index=False)
     """
     
-    visualization("./results/haha.xlsx", "Guangxi", "food")
+    #visualization("./results/haha.xlsx", "Guangxi", "food")
