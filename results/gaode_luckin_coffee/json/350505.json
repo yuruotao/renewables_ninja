@@ -1,0 +1,71 @@
+[
+  {
+    "parent": [],
+    "address": "\u4e2d\u5174\u885728-99\u53f7\u6c38\u5609\u5929\u57301\u53f7\u95e8\u4fa7\u5e95\u5546",
+    "distance": [],
+    "pname": "\u798f\u5efa\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "4.5",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u6cc9\u5dde\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/b58358bd80bd226b542de8a6505c703b"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/b68f480e3b9e204543a2274f4b4849fb"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/de40dc7a8991287633c5fd37af09d916"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u6cc9\u6e2f\u533a",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u6c38\u5609\u5929\u5730\u5e97)",
+    "location": "118.914622,25.126298",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0IKU7BUOJ"
+  },
+  {
+    "parent": "B0I0RCW2EF",
+    "address": "\u82b3\u6c81\u56ed",
+    "distance": [],
+    "pname": "\u798f\u5efa\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "\u5468\u4e00\u81f3\u5468\u4e9407:00-22:00\uff1b\u5468\u516d\u81f3\u5468\u65e508:00-22:00",
+      "rating": "4.1",
+      "open_time": "07:00-22:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u6cc9\u5dde\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "320",
+    "adname": "\u6cc9\u6e2f\u533a",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u82b3\u6c81\u56ed\u5e97)",
+    "location": "118.915971,25.128336",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0JK1HFUYF"
+  }
+]

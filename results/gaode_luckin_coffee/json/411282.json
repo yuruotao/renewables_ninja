@@ -1,0 +1,80 @@
+[
+  {
+    "parent": [],
+    "address": "\u6843\u6797\u8857\u4e0e\u5efa\u8bbe\u8def\u4ea4\u53c9\u53e3",
+    "distance": [],
+    "pname": "\u6cb3\u5357\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9407:00-18:00\uff1b\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u516d\u81f3\u5468\u65e509:00-20:00",
+      "rating": "4.4",
+      "open_time": "07:00-18:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u4e09\u95e8\u5ce1\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e6ea1eddfd19697440bbaee56efd8aa4"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/377c51b864ad88c66ddf42cb0c14eb00"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6605990d60c73cf2ed8c916d16fa7cd5"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u7075\u5b9d\u5e02",
+    "name": "\u745e\u5e78\u5496\u5561(\u7075\u5b9d\u5f3a\u4eba\u8857\u5e97)",
+    "location": "110.872513,34.526775",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0JRY75CKT"
+  },
+  {
+    "parent": [],
+    "address": "\u65b0\u534e\u8def\u4e2d\u6bb5\u6052\u9686\u5e7f\u573a113\u53f7",
+    "distance": [],
+    "pname": "\u6cb3\u5357\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "08:30-21:30",
+      "rating": "4.3",
+      "open_time": "08:30-21:30",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u4e09\u95e8\u5ce1\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/faf1bb975e38ff41258cc2444716f6a9"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/2a3c214bb1a2fdf65402d999aa4e1e9b"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u7075\u5b9d\u5e02",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u7075\u5b9d\u6052\u9686\u8d2d\u7269\u5e7f\u573a\u5e97)",
+    "location": "110.891665,34.520314",
+    "tel": "17838137701;4000100100",
+    "shopid": [],
+    "id": "B0J0OHBTOR"
+  }
+]

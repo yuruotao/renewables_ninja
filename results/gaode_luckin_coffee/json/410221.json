@@ -1,0 +1,84 @@
+[
+  {
+    "parent": "B0FFHO87MS",
+    "address": "\u675e\u53bf\u6b23\u60a6\u57ce\u4e00\u5c42\u5916\u5e97\u533a\u57df",
+    "distance": [],
+    "pname": "\u6cb3\u5357\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "4.0",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5f00\u5c01\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6605990d60c73cf2ed8c916d16fa7cd5"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/b68f480e3b9e204543a2274f4b4849fb"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e2c89a03b9b7d1cb21a82938bbd8acdd"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u675e\u53bf",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u675e\u53bf\u6b23\u60a6\u57ce\u5e97)",
+    "location": "114.756457,34.554446",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0JK4ZRINX"
+  },
+  {
+    "parent": "B0HDRHT17N",
+    "address": "\u94f6\u6cb3\u8def\u7fbd\u91d1\u57ce\u5927\u9053\u4ea4\u6c47\u5904\u6b23\u6cf0\u767e\u8d27\u4e00\u5c42\u996e\u54c1\u533a",
+    "distance": [],
+    "pname": "\u6cb3\u5357\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9407:00-18:00\uff1b\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u516d\u81f3\u5468\u65e509:00-20:00",
+      "rating": "4.3",
+      "open_time": "07:00-18:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5f00\u5c01\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/5bf97443e5c1d47673d3b73c91aa8d50.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/b68f480e3b9e204543a2274f4b4849fb"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/2a78403990235a9a89e351367e2020bc"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u675e\u53bf",
+    "name": "\u745e\u5e78\u5496\u5561(\u675e\u53bf\u65b9\u5706\u6b23\u6cf0\u767e\u8d27\u5e97)",
+    "location": "114.774640,34.548430",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0JD5CDQJP"
+  }
+]

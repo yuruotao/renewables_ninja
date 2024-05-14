@@ -1,0 +1,125 @@
+[
+  {
+    "parent": "B02DD010C1",
+    "address": "\u949f\u9f13\u5cad\u8def\u4e0e\u8f66\u7ad9\u8def\u4ea4\u53c9\u53e3\u897f\u531720\u7c73001\u53f7",
+    "distance": [],
+    "pname": "\u6e56\u5357\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9408:00-22:00",
+      "rating": "4.6",
+      "open_time": "08:00-22:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u682a\u6d32\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/1ec50c86247b20d6ffad7f23bd1ec32d"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/0483b08ce34b3d13da47aeaf992961ef"
+      },
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/64959b9fbf4c9c7ef9f5ddf24e06cf65.jpg"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u82a6\u6dde\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u682a\u6d32\u949f\u9f13\u5cad\u5e97)",
+    "location": "113.154849,27.835321",
+    "tel": "17716781519",
+    "shopid": [],
+    "id": "B0JA35TBAD"
+  },
+  {
+    "parent": "B0I2J72HW8",
+    "address": "\u65b0\u534e\u897f\u8def\u738b\u5e9c\u661fMall-A\u680bB1\u5c42(3\u53f7\u95e8\u5165\u53e3)",
+    "distance": [],
+    "pname": "\u6e56\u5357\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9409:30-22:00",
+      "rating": "4.4",
+      "open_time": "09:30-22:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u682a\u6d32\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/34f44b86d266bfcf4b8c01e11b8cf6bb.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/2984f3692ee9435114c821870996a9dd"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/9654d83931b5bac296207211b93e9054"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u82a6\u6dde\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u682a\u6d32\u738b\u5e9c\u661fMall\u5e97)",
+    "location": "113.153987,27.838295",
+    "tel": "19359914712",
+    "shopid": [],
+    "id": "B0JBTH5B01"
+  },
+  {
+    "parent": [],
+    "address": "\u5e86\u4e91\u8857\u9053\u4eba\u6c11\u8def18\u53f7(\u4e2d\u56fd\u5de5\u5546\u94f6\u884c\u5357\u4fa7)",
+    "distance": [],
+    "pname": "\u6e56\u5357\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9407:30-19:30",
+      "rating": "4.4",
+      "open_time": "07:30-19:30",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u682a\u6d32\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/c0e0b4e1266578d0ad3c45c6966d0edb"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/61d84c24fcb96b24c744a8d5f5630b5e"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e914601bbef5ee85069cdd95b7a9db13"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u82a6\u6dde\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u682a\u6d32\u670d\u88c5\u5e02\u573a\u5e97)",
+    "location": "113.156281,27.829623",
+    "tel": "13307338946",
+    "shopid": [],
+    "id": "B0JUHC0HUT"
+  }
+]

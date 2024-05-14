@@ -1,0 +1,76 @@
+[
+  {
+    "parent": [],
+    "address": "\u5929\u6613\u6c5f\u6e7e\u5e7f\u573a",
+    "distance": [],
+    "pname": "\u6e56\u5357\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "\u5468\u4e00\u81f3\u5468\u4e9408:00-21:00\uff1b\u5468\u516d\u81f3\u5468\u65e509:00-22:00",
+      "rating": "4.2",
+      "open_time": "09:00-22:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u6e58\u6f6d\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/34e52da752698603c88152e6f3525cfb"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u6e58\u6f6d\u53bf",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u5929\u6613\u00b7\u6c5f\u6e7e\u5e7f\u573a\u5e97)",
+    "location": "112.971105,27.793418",
+    "tel": "17775784911",
+    "shopid": [],
+    "id": "B0J13C9MTC"
+  },
+  {
+    "parent": "B0FFG3467C",
+    "address": "\u6613\u4fd7\u6cb3\u9547\u51e4\u51f0\u8def\u540c\u4e30\u5e7f\u573a\u6b65\u6b65\u9ad8\u5546\u573a\u4e00\u5c421001\u53f7",
+    "distance": [],
+    "pname": "\u6e56\u5357\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "08:00-22:00",
+      "rating": "4.4",
+      "open_time": "08:00-22:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u6e58\u6f6d\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/9e4014d5a18848189386ac704b093c16"
+      },
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/b9ed11e98f4e94b388572d30fa60e538.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/dc2911f1ab014cdd579c2ca50ed0f40b"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u6e58\u6f6d\u53bf",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u6613\u4fd7\u6cb3\u6b65\u6b65\u9ad8\u5e7f\u573a\u5e97)",
+    "location": "112.946777,27.782758",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0IRF7APU2"
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "parent": [],
+    "address": "\u6d9e\u9633\u8def116\u53f7\u4e2d\u95f4\u5546\u94fa3\u95f4",
+    "distance": [],
+    "pname": "\u6cb3\u5317\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "4.1",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u4fdd\u5b9a\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u6d9e\u6c34\u53bf",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u6d9e\u9633\u8def\u5e97)",
+    "location": "115.702351,39.394942",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0J0TR0VP9"
+  },
+  {
+    "parent": "B0FFIL7XSJ",
+    "address": "\u4e2d\u8fdc\u7535\u5668\u745e\u5e78\u5496\u5561",
+    "distance": [],
+    "pname": "\u6cb3\u5317\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "\u5468\u4e00\u81f3\u5468\u4e94 07:00-18:00\uff1b\u5468\u516d\u81f3\u5468\u65e5 09:00-20:00",
+      "rating": "4.3",
+      "open_time": "07:00-18:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u4fdd\u5b9a\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/bf4e8c8912447a0fc92af489e04258ca"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/78836ef7d80e26d945f447304823a8df"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e17f490fc7bc7b5f3edcee5cb72b0e0b"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u6d9e\u6c34\u53bf",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u4e2d\u8fdc\u8d2d\u7269\u5e97)",
+    "location": "115.714991,39.392020",
+    "tel": "15632237122;4000100100",
+    "shopid": [],
+    "id": "B0JR5CQ590"
+  }
+]

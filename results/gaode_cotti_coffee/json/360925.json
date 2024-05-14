@@ -1,0 +1,80 @@
+[
+  {
+    "id": "B0JALHDAUN",
+    "parent": [],
+    "childtype": [],
+    "name": "\u5e93\u8fea\u5496\u5561(\u9756\u5b89\u4e1c\u65b9\u4e1c\u8def\u5e97)",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "typecode": "050500",
+    "biz_type": "diner",
+    "address": "\u53cc\u6eaa\u9547\u4e1c\u65b9\u4e1c\u8def28\u53f7",
+    "location": "115.365968,28.859385",
+    "tel": "15180594762",
+    "pname": "\u6c5f\u897f\u7701",
+    "cityname": "\u5b9c\u6625\u5e02",
+    "adname": "\u9756\u5b89\u53bf",
+    "importance": [],
+    "shopid": [],
+    "shopinfo": "1",
+    "poiweight": [],
+    "distance": [],
+    "biz_ext": {
+      "rating": "4.1",
+      "cost": "10.00",
+      "meal_ordering": "0",
+      "open_time": "08:30-21:30",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9408:30-21:30"
+    },
+    "photos": [
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/f8201a9686a9e02f284f25cf941033cf.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e914601bbef5ee85069cdd95b7a9db13"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/9a055ade9ffc71dc2aacff89e66df583"
+      }
+    ]
+  },
+  {
+    "id": "B0KDACEA5S",
+    "parent": [],
+    "childtype": [],
+    "name": "\u5e93\u8fea\u5496\u5561(\u5357\u4ea4\u58a8\u8f69\u5e97)",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "typecode": "050500",
+    "biz_type": "diner",
+    "address": "\u5357\u660c\u4ea4\u901a\u5b66\u9662\u58a8\u8f69\u6e56\u6821\u533a\u5546\u4e1a\u885726\u53f7\u5546\u94fa",
+    "location": "115.386563,28.787774",
+    "tel": [],
+    "pname": "\u6c5f\u897f\u7701",
+    "cityname": "\u5b9c\u6625\u5e02",
+    "adname": "\u9756\u5b89\u53bf",
+    "importance": [],
+    "shopid": [],
+    "shopinfo": "1",
+    "poiweight": [],
+    "distance": [],
+    "biz_ext": {
+      "rating": [],
+      "cost": [],
+      "meal_ordering": "0",
+      "open_time": "07:30-20:30",
+      "opentime2": "07:30-20:30"
+    },
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/query_pic?id=st295c7630-9672-49da-b930-f59a8f8a80b9&user=search&operate=original"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/eb145f166dff73eeb1b06d8b3b228ca4"
+      }
+    ]
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "parent": "B0FFFP6V83",
+    "address": "\u6c11\u751f\u8def2\u53f7",
+    "distance": [],
+    "pname": "\u9655\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "4.2",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u54b8\u9633\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "320",
+    "adname": "\u6b66\u529f\u53bf",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u5b87\u90fd\u00b7\u5fb7\u96c5\u6797\u5c45\u5e97)",
+    "location": "108.220202,34.265987",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0K6J7MGKE"
+  },
+  {
+    "parent": "B038E0O8BT",
+    "address": "\u666e\u96c6\u9547\u4eba\u6c11\u8def\u5546\u8d38\u5927\u53a6\u4e2d\u5fc3\u805a\u5bb6\u8d2d\u7269\u4e2d\u5fc3A\u533a\u4e00\u5c42A1\u53f7",
+    "distance": [],
+    "pname": "\u9655\u897f\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "4.3",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u54b8\u9633\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6605990d60c73cf2ed8c916d16fa7cd5"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/b68f480e3b9e204543a2274f4b4849fb"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e2c89a03b9b7d1cb21a82938bbd8acdd"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u6b66\u529f\u53bf",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u6b66\u529f\u805a\u5bb6\u8d2d\u7269\u4e2d\u5fc3\u5e97)",
+    "location": "108.207640,34.258537",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0J3FC6STM"
+  }
+]

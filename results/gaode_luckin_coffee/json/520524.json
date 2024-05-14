@@ -1,0 +1,76 @@
+[
+  {
+    "parent": [],
+    "address": "\u7389\u5c4f\u885731\u53f7",
+    "distance": [],
+    "pname": "\u8d35\u5dde\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "08:00-22:00",
+      "rating": "4.2",
+      "open_time": "08:00-22:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u6bd5\u8282\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/5d34fcda2ccd1c7b083d9d79c2ef454a"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u7ec7\u91d1\u53bf",
+    "name": "\u745e\u5e78\u5496\u5561(\u7ec7\u91d1\u53bf\u7389\u5c4f\u8857\u5e97)",
+    "location": "105.772533,26.667989",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0KBBSOP14"
+  },
+  {
+    "parent": "B0FFIB70IP",
+    "address": "\u65b0\u534e\u5317\u8def245\u53f7\u91d1\u897f\u5546\u8d38\u57ceA1-29\u53f7",
+    "distance": [],
+    "pname": "\u8d35\u5dde\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9407:00-18:00\uff1b\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u516d\u81f3\u5468\u65e509:00-20:00",
+      "rating": "4.2",
+      "open_time": "07:00-18:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u6bd5\u8282\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u9910\u996e\u76f8\u5173\u573a\u6240;\u9910\u996e\u76f8\u5173",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/d53de24d94c23f917a1ee88f7c985266.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/8e33b2d4c503a7d548ed0fe09ea2db9d.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6605990d60c73cf2ed8c916d16fa7cd5"
+      }
+    ],
+    "typecode": "050000",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u7ec7\u91d1\u53bf",
+    "name": "\u745e\u5e78\u5496\u5561(\u7ec7\u91d1\u91d1\u897f\u5546\u8d38\u57ce\u5e97)",
+    "location": "105.770099,26.668547",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0J19C4YJW"
+  }
+]

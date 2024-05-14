@@ -1,0 +1,84 @@
+[
+  {
+    "parent": [],
+    "address": "\u65b0\u57ce\u8def\u957f\u5c71\u8857\u4ea4\u53e3\u897f\u5317\u4fa7038\u53f7033-3\u53f7",
+    "distance": [],
+    "pname": "\u5c71\u4e1c\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9408:30-21:30",
+      "rating": "4.2",
+      "open_time": "08:30-21:30",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u6cf0\u5b89\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/f16d87daf818a724072e3288ce0e7af5"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e914601bbef5ee85069cdd95b7a9db13"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/9a055ade9ffc71dc2aacff89e66df583"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u80a5\u57ce\u5e02",
+    "name": "\u5e93\u8fea\u5496\u5561(\u957f\u5c71\u8857\u5e97)",
+    "location": "116.773058,36.184550",
+    "tel": "19100422922",
+    "shopid": [],
+    "id": "B0JG3SV22E"
+  },
+  {
+    "parent": "B021A0NW59",
+    "address": "\u65b0\u57ce\u8857\u9053\u65b0\u57ce\u8def73\u53f7\u65b0\u5408\u4f5c\u8d2d\u7269\u4e2d\u5fc31\u5c42",
+    "distance": [],
+    "pname": "\u5c71\u4e1c\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9409:00-21:00",
+      "rating": "4.4",
+      "open_time": "09:00-21:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u6cf0\u5b89\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/3431a363c632a9876556c9a1c10e5e61"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6cfe100951b79b0449f0f03d7bff931f"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e914601bbef5ee85069cdd95b7a9db13"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u80a5\u57ce\u5e02",
+    "name": "\u5e93\u8fea\u5496\u5561(\u65b0\u5408\u4f5c\u8d2d\u7269\u4e2d\u5fc3\u5e97)",
+    "location": "116.770653,36.183748",
+    "tel": "13181779485",
+    "shopid": [],
+    "id": "B0JGR52J0B"
+  }
+]

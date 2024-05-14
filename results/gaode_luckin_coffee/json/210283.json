@@ -1,0 +1,125 @@
+[
+  {
+    "parent": "B019B09RQ4",
+    "address": "\u9ec4\u6d77\u5927\u88571\u53f7\u65b0\u5929\u5730\u5546\u4e1a\u57ceF1\u5c42",
+    "distance": [],
+    "pname": "\u8fbd\u5b81\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "\u5468\u4e00\u81f3\u5468\u4e94:07:00-14:30\uff1b\u5468\u516d\u81f3\u5468\u65e5:08:00-20:30",
+      "rating": "4.4",
+      "open_time": "07:00-14:30",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5927\u8fde\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/f1eed000fa4688e4c622c9107d47e7ad.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/b68f480e3b9e204543a2274f4b4849fb"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/2a6ca4f921e8ef8c93264633d73ce7e0"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u5e84\u6cb3\u5e02",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u65b0\u5929\u5730\u5546\u4e1a\u57ce\u5e97)",
+    "location": "122.976384,39.697723",
+    "tel": "18502435906;4000100100",
+    "shopid": [],
+    "id": "B0I23CY1ZN"
+  },
+  {
+    "parent": "B0FFGO537I",
+    "address": "\u57ce\u5ef6\u5b89\u8def\u5357\u6bb5918\u53f7\u4e07\u8fbe\u5e7f\u573a\u4e00\u5c421055\u53f7",
+    "distance": [],
+    "pname": "\u8fbd\u5b81\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9407:00-18:00\uff1b\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u516d\u81f3\u5468\u65e509:00-20:00",
+      "rating": "4.3",
+      "open_time": "07:00-18:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5927\u8fde\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/0b939a6a7455504262744f9ada5327e6"
+      },
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/b3003999646d1259b542e3a5475766f9.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e2e0a142f9d1719f5fb1c974dafcf3ee"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u5e84\u6cb3\u5e02",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u5e84\u6cb3\u4e07\u8fbe\u5e7f\u573a\u5e97)",
+    "location": "122.981151,39.664104",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0JU650EXU"
+  },
+  {
+    "parent": [],
+    "address": "\u5b66\u5e9c\u5927\u8857117\u53f7\u5927\u8fde\u5de5\u4e1a\u5927\u5b66\u827a\u672f\u4e0e\u4fe1\u606f\u5de5\u7a0b\u5b66\u966210102\u5ba4",
+    "distance": [],
+    "pname": "\u8fbd\u5b81\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "06:30-21:00",
+      "rating": "3.9",
+      "open_time": "06:30-21:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5927\u8fde\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6ec68f7c45a4c2103db707b2e3fb199c"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/86c5108ac56bba37ed549124d0e5654f"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/f079f4a6fba2f2428dc6d89111f58699"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u5e84\u6cb3\u5e02",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u8fbd\u5b81\u5e08\u8303\u5927\u5b66\u6d77\u534e\u5b66\u9662\u897f\u6821\u533a\u5e97)",
+    "location": "122.930530,39.635596",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0I6RUUQGZ"
+  }
+]

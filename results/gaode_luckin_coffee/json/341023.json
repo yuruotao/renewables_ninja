@@ -1,0 +1,76 @@
+[
+  {
+    "parent": [],
+    "address": "\u9645\u6751\u4e1c\u8def56\u53f7",
+    "distance": [],
+    "pname": "\u5b89\u5fbd\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "4.4",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u9ec4\u5c71\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/21aec65610b668dc688930e4e6b73576"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u9edf\u53bf",
+    "name": "\u745e\u5e78\u5496\u5561(\u9edf\u53bf\u5b8f\u6751\u5e97)",
+    "location": "117.986866,30.000734",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0KBNCIYAM"
+  },
+  {
+    "parent": "B022F00MFO",
+    "address": "\u78a7\u9633\u9547\u6cbf\u6cb3\u897f\u8def59\u53f7A3\u5546\u94fa",
+    "distance": [],
+    "pname": "\u5b89\u5fbd\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9407:00-18:00\uff1b\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u516d\u81f3\u5468\u65e509:00-20:00",
+      "rating": "4.3",
+      "open_time": "07:00-18:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u9ec4\u5c71\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/2cd6cb36813a486b53a0b57ff97d591d"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/57befd6dcc2c45a4b4bb54adcf2c71b7"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/021bc23b705be0ba19898e449ba85552"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u9edf\u53bf",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u9edf\u53bf\u5929\u6da6\u53d1\u5e97)",
+    "location": "117.943280,29.922740",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0JA2CH8L7"
+  }
+]

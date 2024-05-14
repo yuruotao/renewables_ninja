@@ -1,0 +1,71 @@
+[
+  {
+    "parent": [],
+    "address": "\u5409\u7f8e\u8d2d\u7269\u5e7f\u573a\u4e00\u5c42",
+    "distance": [],
+    "pname": "\u6cb3\u5317\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "4.3",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u8861\u6c34\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/83a8a38983b90d2119d4f5b8756d32c8"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6605990d60c73cf2ed8c916d16fa7cd5"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/b68f480e3b9e204543a2274f4b4849fb"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u5180\u5dde\u533a",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u5180\u5dde\u5409\u7f8e\u8d2d\u7269\u5e7f\u573a\u5e97)",
+    "location": "115.587227,37.556370",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0J0DNGROJ"
+  },
+  {
+    "parent": "B0G296KZQH",
+    "address": "\u6e56\u6ee8\u897f\u5927\u9053\u4e0e\u8fce\u5bbe\u5317\u5927\u8857\u4ea4\u53c9\u53e3\u4e1c120\u7c73",
+    "distance": [],
+    "pname": "\u6cb3\u5317\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "4.0",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u8861\u6c34\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u5180\u5dde\u533a",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u5180\u5dde\u4fe1\u8a89\u697c\u5e97)",
+    "location": "115.573208,37.555134",
+    "tel": [],
+    "shopid": [],
+    "id": "B0JK75F7G1"
+  }
+]

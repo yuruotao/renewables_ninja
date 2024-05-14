@@ -1,0 +1,72 @@
+[
+  {
+    "parent": [],
+    "address": "\u8303\u53bf\u65b0\u533a\u5546\u8d38\u57ce\u5357\u95e810\u53f7",
+    "distance": [],
+    "pname": "\u6cb3\u5357\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "09:00-22:00",
+      "rating": "4.3",
+      "open_time": "09:00-22:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u6fee\u9633\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/a2bef05acc3ae13013784159735ab050"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/4ad9ce7ef745b73a463604f79f54893f"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u8303\u53bf",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u8303\u53bf\u5546\u8d38\u57ce\u5e97)",
+    "location": "115.505547,35.857365",
+    "tel": "19337095626",
+    "shopid": [],
+    "id": "B0J3RH2D4A"
+  },
+  {
+    "parent": "B0FFJOBCZY",
+    "address": "\u5927\u4e30\u56fd\u9645",
+    "distance": [],
+    "pname": "\u6cb3\u5357\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "4.1",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u6fee\u9633\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/3f29ba1f4733ee1840c151f30ba41b23"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u8303\u53bf",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u5927\u4e30\u56fd\u9645\u5e97)",
+    "location": "115.511191,35.858910",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0JKLY4PS1"
+  }
+]

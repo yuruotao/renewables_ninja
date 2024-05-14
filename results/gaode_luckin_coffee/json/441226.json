@@ -1,0 +1,84 @@
+[
+  {
+    "parent": [],
+    "address": "\u5fb7\u5e86\u5927\u9053\u897f48\u53f7",
+    "distance": [],
+    "pname": "\u5e7f\u4e1c\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": "\u5468\u4e00\u81f3\u5468\u4e94:08:00-22:00\uff1b\u5468\u516d\u81f3\u5468\u65e5:08:00-23:00",
+      "rating": "4.6",
+      "open_time": "08:00-22:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u8087\u5e86\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/31323fd05974d55eed7117576c90170f"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6ec68f7c45a4c2103db707b2e3fb199c"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/86c5108ac56bba37ed549124d0e5654f"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u5fb7\u5e86\u53bf",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u5fb7\u5e86\u5927\u9053\u897f\u5e97)",
+    "location": "111.776904,23.143019",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0ID6S0XZB"
+  },
+  {
+    "parent": [],
+    "address": "\u5fb7\u57ce\u9547\u89e3\u653e\u8def\u53bf\u767e\u8d27\u516c\u53f8\u5927\u697c\u9996\u5c42\u5317\u8d77\u7b2c15-16\u4e8c\u5361\u5546\u94fa",
+    "distance": [],
+    "pname": "\u5e7f\u4e1c\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "4.2",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u8087\u5e86\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/e5072a5c4cbd3964dd33ff2341cb06bf.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6605990d60c73cf2ed8c916d16fa7cd5"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/b68f480e3b9e204543a2274f4b4849fb"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u5fb7\u5e86\u53bf",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u5fb7\u5e86\u89e3\u653e\u8def\u5e97)",
+    "location": "111.773325,23.139196",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0J0GAI8HT"
+  }
+]

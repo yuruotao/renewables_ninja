@@ -1,0 +1,76 @@
+[
+  {
+    "parent": "B01AB13LIO",
+    "address": "\u5927\u6d3c\u8857\u9053\u5546\u4e1a\u885729\u53f7\u76d8\u9526\u5174\u9686\u4e09\u767e1001-1004\u53f7\u94fa\u4f4d",
+    "distance": [],
+    "pname": "\u8fbd\u5b81\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "4.2",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u76d8\u9526\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6ec68f7c45a4c2103db707b2e3fb199c"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/86c5108ac56bba37ed549124d0e5654f"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/3353ae2754c7cbe69cbf724c1ffae4e7"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u5927\u6d3c\u533a",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u76d8\u9526\u5174\u9686\u4e09\u767e\u5e97)",
+    "location": "122.067308,40.994867",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0I6P1AM20"
+  },
+  {
+    "parent": "B0FFMGMK2S",
+    "address": "\u5929\u6da6\u5e7f\u573a",
+    "distance": [],
+    "pname": "\u8fbd\u5b81\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": [],
+      "opentime2": [],
+      "rating": "4.3",
+      "open_time": [],
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u76d8\u9526\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/9e0427c0f94db31f969a0798ed40e550"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "0",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u5927\u6d3c\u533a",
+    "name": "luckin coffee \u745e\u5e78\u5496\u5561(\u5929\u6da6\u5e7f\u573a\u5e97)",
+    "location": "122.074052,41.078727",
+    "tel": "4000100100",
+    "shopid": [],
+    "id": "B0JKFNU4IB"
+  }
+]

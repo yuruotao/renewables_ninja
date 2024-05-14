@@ -1,0 +1,453 @@
+[
+  {
+    "parent": [],
+    "address": "\u6c49\u4e2d\u8def268\u53f7\u7535\u4fe1\u8425\u4e1a\u5385\u5185(\u6c49\u4e2d\u8def\u5730\u94c1\u53e3\u4e1c\u4fa7)",
+    "distance": [],
+    "pname": "\u6c5f\u82cf\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9407:00-20:00",
+      "rating": "4.6",
+      "open_time": "07:00-20:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5357\u4eac\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e914601bbef5ee85069cdd95b7a9db13"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/9a055ade9ffc71dc2aacff89e66df583"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/ca49d9eda049ec5599f49e3a651460b4"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u9f13\u697c\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u6c49\u4e2d\u8def\u5e97)",
+    "location": "118.770223,32.042972",
+    "tel": "18900663375",
+    "shopid": [],
+    "id": "B0JD2MBR18"
+  },
+  {
+    "parent": "B00190BC7O",
+    "address": "\u4e2d\u5c71\u5317\u8def223\u53f7\u5efa\u8fbe\u5927\u53a61\u5c42\u5546\u94fa",
+    "distance": [],
+    "pname": "\u6c5f\u82cf\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9408:00-19:00\uff1b\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u516d\u81f3\u5468\u65e508:00-19:00",
+      "rating": "4.4",
+      "open_time": "08:00-19:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5357\u4eac\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": "\u83dc\u54c1",
+        "url": "http://store.is.autonavi.com/showpic/a50b78888d9b456cf41ac22d26957212"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/9a055ade9ffc71dc2aacff89e66df583"
+      },
+      {
+        "title": "\u83dc\u54c1",
+        "url": "http://store.is.autonavi.com/showpic/cf9ff277bef01d083d46bdd75e8ca331"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u9f13\u697c\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u5efa\u8fbe\u5927\u53a6\u5e97)",
+    "location": "118.768490,32.072029",
+    "tel": "15161481933",
+    "shopid": [],
+    "id": "B0JKH5B70K"
+  },
+  {
+    "parent": "B0FFHH5KEO",
+    "address": "\u7ea2\u5c71\u5357\u8def89\u53f71\u5e62101-103\u5ba4",
+    "distance": [],
+    "pname": "\u6c5f\u82cf\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9410:00-22:00\uff1b\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u516d\u81f3\u5468\u65e510:00-22:00",
+      "rating": "4.4",
+      "open_time": "10:00-22:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5357\u4eac\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": "\u83dc\u54c1",
+        "url": "http://store.is.autonavi.com/showpic/cf9ff277bef01d083d46bdd75e8ca331"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/0b604012d42a2a9721d0b5428c85472e"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6dabb931bd3fde449b425d469e20a1cb"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u9f13\u697c\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u5357\u4eac\u7ad9\u878d\u521b\u7cbe\u5f69\u5929\u5730\u5e97)",
+    "location": "118.796573,32.088761",
+    "tel": "18631048536",
+    "shopid": [],
+    "id": "B0K6VATXOP"
+  },
+  {
+    "parent": [],
+    "address": "\u534e\u4fa8\u8def46-3\u53f7(\u4ea4\u901a\u94f6\u884c\u897f\u4fa7)",
+    "distance": [],
+    "pname": "\u6c5f\u82cf\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u5468\u4e00\u81f3\u5468\u4e9407:30-19:00\uff1b\u5468\u516d\u81f3\u5468\u65e508:00-19:00",
+      "rating": "4.8",
+      "open_time": "07:30-19:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5357\u4eac\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/88f75b0c0ad62a2b62ce4256032f34f3"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/ea4b72253471853db0989615f3945162"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/b306a7c78ab7e4223f8735f8f3a1c86d"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u9f13\u697c\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u534e\u4fa8\u8def\u5e97)",
+    "location": "118.780628,32.046571",
+    "tel": "18115884979",
+    "shopid": [],
+    "id": "B0J6CHLMHU"
+  },
+  {
+    "parent": "B00190BBW2",
+    "address": "\u5b81\u6d77\u8def197-5\u53f7(\u57f9\u5fb7\u91cc\u5c0f\u533a2\u53f7\u697c\u897f\u4fa7)",
+    "distance": [],
+    "pname": "\u6c5f\u82cf\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u56db07:30-22:00\uff1b\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e94\u81f3\u5468\u65e507:30-22:30",
+      "rating": "4.4",
+      "open_time": "07:30-22:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5357\u4eac\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/e00661fdebe26fe5863dfc356cd3d0f6.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/d0c41acc966973b1e4450c206dd1ec74"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e914601bbef5ee85069cdd95b7a9db13"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "320",
+    "adname": "\u9f13\u697c\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u5357\u5e08\u5927\u968f\u56ed\u5e97)",
+    "location": "118.771845,32.053892",
+    "tel": "18851035664",
+    "shopid": [],
+    "id": "B0JUS7FLC4"
+  },
+  {
+    "parent": "B0FFH0FY8I",
+    "address": "\u6e56\u5317\u8def51\u53f7\u543e\u60a6\u5e7f\u573a\u8d1f1\u697cB1027",
+    "distance": [],
+    "pname": "\u6c5f\u82cf\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9410:00-21:30",
+      "rating": "4.5",
+      "open_time": "10:00-21:30",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5357\u4eac\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e914601bbef5ee85069cdd95b7a9db13"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/9a055ade9ffc71dc2aacff89e66df583"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/ca49d9eda049ec5599f49e3a651460b4"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u9f13\u697c\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u5357\u4eac\u9f13\u697c\u543e\u60a6\u5e7f\u573a\u5e97)",
+    "location": "118.776850,32.067243",
+    "tel": "17714371269",
+    "shopid": [],
+    "id": "B0J2NCBRWP"
+  },
+  {
+    "parent": "B00190D2H6",
+    "address": "\u4e2d\u592e\u8def417\u53f7\u5148\u950b\u5965\u7279\u83b1\u65af1\u5c42(\u4e1c\u95e8\u5165\u53e3\u5904)",
+    "distance": [],
+    "pname": "\u6c5f\u82cf\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u56db08:00-19:00\uff1b\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e94\u81f3\u5468\u65e508:00-21:00",
+      "rating": "4.4",
+      "open_time": "08:00-19:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5357\u4eac\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/1d66475654ba994e27e1e557b4b7010b"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/95886a3435a78d94f0d90603c9f8af5a"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e914601bbef5ee85069cdd95b7a9db13"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u9f13\u697c\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u5148\u950b\u5965\u7279\u83b1\u65af\u5546\u573a\u5e97)",
+    "location": "118.783499,32.087586",
+    "tel": "18912967317",
+    "shopid": [],
+    "id": "B0JUTA5P89"
+  },
+  {
+    "parent": [],
+    "address": "\u70ed\u6cb3\u8def117\u53f7\u8bc1\u5927\u5927\u62c7\u6307\u5e7f\u573a\u5e95\u5546",
+    "distance": [],
+    "pname": "\u6c5f\u82cf\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9407:30-19:30",
+      "rating": "4.4",
+      "open_time": "07:30-19:30",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5357\u4eac\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/e914601bbef5ee85069cdd95b7a9db13"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/a50b78888d9b456cf41ac22d26957212"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/9a055ade9ffc71dc2aacff89e66df583"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": [],
+    "adname": "\u9f13\u697c\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u9f13\u697c\u5927\u62c7\u6307\u5e7f\u573a\u5e97)",
+    "location": "118.742155,32.089511",
+    "tel": "15251793660",
+    "shopid": [],
+    "id": "B0J1NAI3IZ"
+  },
+  {
+    "parent": "B0FFHYPPCC",
+    "address": "\u4e2d\u592e\u5317\u8def\u6cb3\u8def\u90531\u53f7\u559c\u5e74\u82b1\u751f\u55102\u5e62A2",
+    "distance": [],
+    "pname": "\u6c5f\u82cf\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u5468\u4e00\u81f3\u5468\u4e9407:30-19:00\uff1b\u5468\u516d\u81f3\u5468\u65e509:00-20:30",
+      "rating": "4.2",
+      "open_time": "07:30-19:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5357\u4eac\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": "\u83dc\u54c1",
+        "url": "http://store.is.autonavi.com/showpic/cf9ff277bef01d083d46bdd75e8ca331"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/6dabb931bd3fde449b425d469e20a1cb"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/94c967e0cb7584d35bbc5d1e45892ddd"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u9f13\u697c\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u559c\u5e74\u82b1\u751f\u5510\u5e97)",
+    "location": "118.779846,32.096970",
+    "tel": "18061741225",
+    "shopid": [],
+    "id": "B0K6D5AXM2"
+  },
+  {
+    "parent": "B0GRYUW0NT",
+    "address": "\u6e05\u6c5f\u5357\u8def18\u53f7\u9f13\u697c\u521b\u65b0\u5e7f\u573a\u4e0b\u6c89\u5e7f\u573aB1\u5c42-09-1\u5546\u94fa",
+    "distance": [],
+    "pname": "\u6c5f\u82cf\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9408:00-18:30",
+      "rating": "4.4",
+      "open_time": "08:00-18:30",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5357\u4eac\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u5496\u5561\u5385;\u5496\u5561\u5385",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/1c122ebf5457d8fbd8fe49f31ea07f45"
+      },
+      {
+        "title": [],
+        "url": "http://s-pic.oss-cn-beijing.aliyuncs.com/desensitize/images/publish/509a8bc9c4ad0bf7ead438aa12aa4114.jpg"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/f71b225f899bd365e2b8dca8f71de525"
+      }
+    ],
+    "typecode": "050500",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u9f13\u697c\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u9f13\u697c\u521b\u65b0\u5e7f\u573a\u5e97)",
+    "location": "118.730619,32.034034",
+    "tel": "18014839018",
+    "shopid": [],
+    "id": "B0JDMU3Y10"
+  },
+  {
+    "parent": "B0FFKWVW5Y",
+    "address": "\u96c6\u5e86\u95e8\u5927\u8857268\u53f7\u82cf\u5b81\u6167\u8c37\u4e00\u5c42(E08\u680b\u5927\u5802)",
+    "distance": [],
+    "pname": "\u6c5f\u82cf\u7701",
+    "importance": [],
+    "biz_ext": {
+      "cost": "10.00",
+      "opentime2": "\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u4e00\u81f3\u5468\u4e9407:00-22:00\uff1b\u3010\u6b63\u5e38\u3011\u5168\u5e74\u5468\u516d\u81f3\u5468\u65e507:00-22:00",
+      "rating": "4.2",
+      "open_time": "07:00-22:00",
+      "meal_ordering": "0"
+    },
+    "biz_type": "diner",
+    "cityname": "\u5357\u4eac\u5e02",
+    "type": "\u9910\u996e\u670d\u52a1;\u9910\u996e\u76f8\u5173\u573a\u6240;\u9910\u996e\u76f8\u5173",
+    "photos": [
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/5f4dfcfaaf7933ccb37d4ca67775aa0b"
+      },
+      {
+        "title": "\u83dc\u54c1",
+        "url": "http://store.is.autonavi.com/showpic/a50b78888d9b456cf41ac22d26957212"
+      },
+      {
+        "title": [],
+        "url": "http://store.is.autonavi.com/showpic/9a055ade9ffc71dc2aacff89e66df583"
+      }
+    ],
+    "typecode": "050000",
+    "shopinfo": "1",
+    "poiweight": [],
+    "childtype": "202",
+    "adname": "\u9f13\u697c\u533a",
+    "name": "\u5e93\u8fea\u5496\u5561(\u82cf\u5b81\u6167\u8c37E08\u680b\u5e97)",
+    "location": "118.723817,32.031570",
+    "tel": "17368588742",
+    "shopid": [],
+    "id": "B0IK5CY09K"
+  }
+]
