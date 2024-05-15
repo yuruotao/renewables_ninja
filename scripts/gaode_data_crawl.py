@@ -528,7 +528,7 @@ def coffee_visualization(input_df_path, province, type):
     
     num_ratio = 0.1
     
-    for index, row in charging_gdf.iterrows():
+    for index, row in charging_province.iterrows():
         if row["coffee"] == "LUCKIN":
             ax.scatter(row.geometry.x, row.geometry.y, s=20*num_ratio, color='#242170', linewidths=0, edgecolor=None, alpha=0.5)
         elif row["coffee"] == "COTTI":
