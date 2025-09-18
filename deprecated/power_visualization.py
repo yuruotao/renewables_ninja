@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import momepy
 import os
 
-from utils import data_import
+from deprecated import data_import
 from utils import scraper_utils
 
 current_path = str(Path())

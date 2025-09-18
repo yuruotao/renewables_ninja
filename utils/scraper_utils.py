@@ -6,8 +6,8 @@ import numpy as np
 
 ### Define request functions for single site-locations
 
-def pv_request(coordinates, year, token= None, capacity= 1.0,
-               system_loss= 0.1, tracking= 0, tilt= 35, azim= 180):
+def pv_request(coordinates, year, token=None, capacity=1.0,
+               system_loss=0.1, tracking=0, tilt=35, azim=180):
     """
     Get a single time series for Photovoltaics 
     Retrieve a series of PV production for the specification indicated.
@@ -22,6 +22,7 @@ def pv_request(coordinates, year, token= None, capacity= 1.0,
         tilt (int, optional): Degree of tilt for the panels. Defaults to 35.
         azim (int, optional): Degree of azimuth for the the panels. Defaults to 180.
     """
+    year = str(year)
     
     #Set url base and add pv indicator
     api_base = 'https://www.renewables.ninja/api/'
@@ -50,14 +51,15 @@ def pv_request(coordinates, year, token= None, capacity= 1.0,
         'azim': azim,
         'format': 'json'
     }
+    
     #Execute api request
     r = s.get(url, params=args)
 
     # Parse JSON to get a pandas.DataFrame of data and dict of metadata
-    try:
+    try:    
         parsed_response = json.loads(r.text)
-    except json.JSONDecodeError:
-        print("Decode error")
+    except Exception as e:
+        print("Error", e)
         return(pd.DataFrame(columns = ["no_response"]), dict())
 
     data = pd.read_json(json.dumps(parsed_response['data']), orient='index')
@@ -79,7 +81,7 @@ def wind_request(coordinates, year, token= None, capacity= 1.0,
         height (int, optional): Height of turbine installed. Defaults to 100.
         turbine (str, optional): Model of turbine installed. Defaults to 'Vestas V80 2000'.
     """
-    
+    year = str(year)
     #Set url base and add wind indicator
     api_base = 'https://www.renewables.ninja/api/'
     url = api_base + 'data/wind'
@@ -634,3 +636,67 @@ def ninja_parallel(specs, coord_table, years, renewable, capacity_table,
                                 sustained_limit=sustained_limit)
      
     return(ninja_table)
+
+if __name__ == "__main__":
+    accounts_path = "./data/ninja_accounts.xlsx"
+    solar_path = "./data/global_tracker/Global-Solar-Power-Tracker-February-2025.xlsx"
+    wind_path = "./data/global_tracker/Global-Wind-Power-Tracker-February-2025.xlsx"
+
+    accounts_df = pd.read_excel(accounts_path)
+    token_list = accounts_df.loc[:,"token"].tolist()
+    
+    solar_df_20M = pd.read_excel(solar_path, sheet_name="20 MW+")
+    solar_df_less_20M = pd.read_excel(solar_path, sheet_name="1-20 MW")
+    solar_df = pd.concat([solar_df_20M, solar_df_less_20M], ignore_index=True)
+    
+    wind_df_above = pd.read_excel(wind_path, sheet_name="Data")
+    wind_df_below = pd.read_excel(wind_path, sheet_name="Below Threshold")
+    wind_df = pd.concat([wind_df_above, wind_df_below], ignore_index=True)
+    
+    print(accounts_df)
+    print(solar_df)
+    print(wind_df)
+    
+    # Define the query parameters for solar
+    system_loss = 0.1
+    tracking = False
+    tilt = 35
+    azim = 180
+    year_solar = 2022
+    dataset = 'merra2'
+    
+    # Define the query parameters for wind
+    year_wind = 2022
+    height = 100
+    turbine_model = 'Vestas V80 2000'
+    
+    # Start crawling data
+    tk = 0
+
+    for i, row in solar_df.iterrows():
+        if tk == len(token_list):
+            tk = 0
+
+        print("iteration ", i, "/", len(solar_df)-1)
+        print("tk ", tk, token_list[tk])
+
+        coordinate = [row["Latitude"], row["Longitude"]]
+        capacity = row["Capacity (MW)"]
+
+        temp_data, temp_metadata = pv_request(
+            coordinates=coordinate,
+            year=year_solar,
+            token=token_list[tk],
+            capacity=capacity,
+            system_loss=system_loss,
+            tracking=tracking,
+            tilt=tilt,
+            azim=azim
+        )
+
+        print(temp_data)
+        print(temp_metadata)
+        
+        raise Exception
+
+        tk += 1
