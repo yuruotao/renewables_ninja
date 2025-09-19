@@ -9,6 +9,8 @@ logging.basicConfig()
 from utils import scraper_utils
 
 if __name__ == "__main__":
+    province = "Guizhou" # "Yunnan", "Hainan", "Guizhou"
+    
     accounts_path = "./data/ninja_accounts.xlsx"
     solar_path = "./data/global_tracker/Global-Solar-Power-Tracker-February-2025.xlsx"
     wind_path = "./data/global_tracker/Global-Wind-Power-Tracker-February-2025.xlsx"
@@ -21,7 +23,7 @@ if __name__ == "__main__":
     solar_df_less_20M = pd.read_excel(solar_path, sheet_name="1-20 MW")
     solar_df = pd.concat([solar_df_20M, solar_df_less_20M], ignore_index=True)
     solar_df = solar_df[solar_df["Country/Area"] == "China"]
-    solar_df = solar_df[solar_df["State/Province"] == "Guangxi"]
+    solar_df = solar_df[solar_df["State/Province"] == province]
     solar_df = solar_df[solar_df["Status"] == "operating"]
     solar_df["Capacity (kW)"] = solar_df["Capacity (MW)"] * 1000
     solar_df = solar_df.reset_index(drop=True)
@@ -30,7 +32,7 @@ if __name__ == "__main__":
     wind_df_below = pd.read_excel(wind_path, sheet_name="Below Threshold")
     wind_df = pd.concat([wind_df_above, wind_df_below], ignore_index=True)
     wind_df = wind_df[wind_df["Country/Area"] == "China"]
-    wind_df = wind_df[wind_df["State/Province"] == "Guangxi"]
+    wind_df = wind_df[wind_df["State/Province"] == province]
     wind_df = wind_df[wind_df["Status"] == "operating"]
     wind_df["Capacity (kW)"] = wind_df["Capacity (MW)"] * 1000
     wind_df = wind_df.reset_index(drop=True)
@@ -40,7 +42,7 @@ if __name__ == "__main__":
     print(wind_df)
     ########################################################################
     # Solar
-    solar_result_save_path = result_base_path + "solar/Guangxi/"
+    solar_result_save_path = result_base_path + "solar/" + province + "/"
     os.makedirs(solar_result_save_path, exist_ok=True)
     solar_df.to_excel(solar_result_save_path + "solar.xlsx", index=False)
     
@@ -72,6 +74,7 @@ if __name__ == "__main__":
             print("skip ", ID)
             continue
         else:
+            overflow_counter = 0
             while True:
                 temp_data, temp_metadata = scraper_utils.pv_request(
                     coordinates=coordinate,
@@ -83,6 +86,10 @@ if __name__ == "__main__":
                     tilt=tilt,
                     azim=azim
                 )
+                overflow_counter += 1
+                
+                if overflow_counter >= len(token_list):
+                    raise Exception("All tokens exhausted for this request. Possible issue with the request parameters or server.")
                 
                 if len(temp_data) == 0 or "no_response" in temp_data.columns:
                     tk += 1
@@ -98,7 +105,7 @@ if __name__ == "__main__":
                
     ########################################################################
     # Wind
-    wind_result_save_path = result_base_path + "wind/Guangxi/"
+    wind_result_save_path = result_base_path + "wind/" + province + "/"
     os.makedirs(wind_result_save_path, exist_ok=True)
     wind_df.to_excel(wind_result_save_path + "wind.xlsx", index=False)
     
@@ -125,6 +132,7 @@ if __name__ == "__main__":
             print("skip ", ID)
             continue
         else:
+            overflow_counter = 0
             while True:
                 temp_data, temp_metadata = scraper_utils.wind_request(coordinates=coordinate,
                                         year=year_wind,
@@ -132,6 +140,11 @@ if __name__ == "__main__":
                                         capacity=capacity,
                                         height=height, 
                                         turbine=turbine_model)
+                
+                overflow_counter += 1
+                
+                if overflow_counter >= len(token_list):
+                    raise Exception("All tokens exhausted for this request. Possible issue with the request parameters or server.")
                 
                 if len(temp_data) == 0 or "no_response" in temp_data.columns:
                     tk += 1
